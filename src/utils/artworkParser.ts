@@ -140,26 +140,3 @@ function getFallbackArtworks(): Artwork[] {
   ];
 }
 
-// 향후 실제 MD 파일을 로드할 때 사용할 함수들
-export function parseArtworkMD(content: string): Artwork {
-  // content가 문자열인지 확인
-  if (typeof content !== 'string') {
-    console.error('Content is not a string:', typeof content, content);
-    throw new Error('Content must be a string');
-  }
-
-  const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
-  const match = content.match(frontmatterRegex);
-  
-  if (!match) {
-    throw new Error('Invalid markdown format');
-  }
-  
-  const [, frontmatter, description] = match;
-  const matter: ArtworkMatter = parseFrontmatter(frontmatter);
-  
-  return {
-    ...matter,
-    description: description.trim()
-  };
-}
