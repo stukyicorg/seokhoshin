@@ -9,8 +9,8 @@ images:
   - "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&h=1000&fit=crop"
   - "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=1000&fit=crop"
 ---
-
-test
+ 
+test dd
 
 An exploration of human connection and isolation through abstract figurative forms. The clay elements represent the malleable nature of human relationships, while the bronze components symbolize the lasting impact of meaningful encounters.
 
