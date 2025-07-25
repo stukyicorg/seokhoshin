@@ -107,6 +107,7 @@ dist
 
 # Vercel
 .vercel
+.vercel/
 
 # PWA files
 **/public/sw.js
