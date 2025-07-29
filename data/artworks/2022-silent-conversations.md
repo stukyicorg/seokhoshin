@@ -1,7 +1,7 @@
 ---
 id: "4"
 title: "Silent Conversations"
-year: 2025
+year: 2022
 materials: "Clay, Bronze"
 dimensions: "140 × 60 × 50cm"
 projectNumber: "004"
