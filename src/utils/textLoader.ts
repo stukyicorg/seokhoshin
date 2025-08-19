@@ -1,10 +1,101 @@
 import { TextContent } from '../components/TextPage';
 
+export interface TextSection {
+  id: string;
+  title: string;
+  subtitle?: string;
+  content: string;
+  footer?: string;
+}
+
 const textModules = import.meta.glob('/data/texts/*.md', { 
   query: '?raw',
   import: 'default'
 });
 
+export async function loadAllTextSections(): Promise<TextSection[]> {
+  const sections: TextSection[] = [];
+  
+  // Get all MD file paths and sort them by filename
+  const paths = Object.keys(textModules).sort();
+  
+  for (const path of paths) {
+    try {
+      const content = await textModules[path]() as string;
+      
+      // Extract filename for ID
+      const filename = path.split('/').pop()?.replace('.md', '') || '';
+      
+      // Parse the MD content
+      const section = parseTextSection(content, filename);
+      sections.push(section);
+    } catch (error) {
+      console.error(`Failed to load ${path}:`, error);
+    }
+  }
+  
+  return sections;
+}
+
+function parseTextSection(content: string, filename: string): TextSection {
+  const lines = content.split('\n');
+  let title = filename;
+  let subtitle = '';
+  let mainContent = '';
+  let footer = '';
+  let currentSection = 'main';
+  let inFrontmatter = false;
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    
+    // Frontmatter 처리
+    if (line === '---') {
+      if (!inFrontmatter && i === 0) {
+        inFrontmatter = true;
+        continue;
+      } else if (inFrontmatter) {
+        inFrontmatter = false;
+        continue;
+      }
+    }
+    
+    if (inFrontmatter) {
+      if (line.startsWith('title:')) {
+        title = line.replace('title:', '').trim().replace(/['"]/g, '');
+      } else if (line.startsWith('subtitle:')) {
+        subtitle = line.replace('subtitle:', '').trim().replace(/['"]/g, '');
+      }
+      continue;
+    }
+    
+    // 섹션 헤더 확인
+    if (line.startsWith('## leftColumn') || line.startsWith('## rightColumn')) {
+      currentSection = 'content';
+      continue;
+    } else if (line.startsWith('## footer')) {
+      currentSection = 'footer';
+      continue;
+    }
+    
+    // 콘텐츠 추가
+    if (currentSection === 'footer') {
+      footer += (footer ? '\n' : '') + line;
+    } else {
+      mainContent += (mainContent ? '\n' : '') + line;
+    }
+  }
+  
+  return {
+    id: filename,
+    title,
+    subtitle,
+    content: mainContent.trim(),
+    footer: footer.trim() || undefined
+  };
+}
+
+// Legacy function for backward compatibility
 export async function loadTextContent(): Promise<TextContent> {
   try {
     // content.md 파일 로드
