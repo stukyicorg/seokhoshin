@@ -10,7 +10,6 @@ Fusce id vehicula ipsum. Duis lacinia porttitor justo, ac interdum leo sollicitu
 Etiam et velit vitae quam aliquet fermentum.
 Quisque sit amet nulla dictum, cursus erat a, tempus est.
 
-## rightColumn
 *Curabitur vitae odio pretium*, volutpat augue efficitur, ullamcorper ante. Nunc ultrices eget urna in aliquet. Nulla at ullamcorper leo. Aliquam egestas non lacus sed tempor. Ut bibendum mauris sit amet augue mollis, et tincidunt nisl gravida. Proin dictum dapibus libero vitae luctus. *Morbi gravida dolor sit amet erat sagittis, suscipit blandit nibh ullamcorper.*
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.
