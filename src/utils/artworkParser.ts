@@ -1,4 +1,4 @@
-import { Artwork } from '../App';
+import { Artwork, ImageConfig } from '../App';
 
 interface ArtworkMatter {
   id: string;
@@ -7,7 +7,7 @@ interface ArtworkMatter {
   materials: string;
   dimensions: string;
   projectNumber: string;
-  images: string[];
+  images: (string | ImageConfig)[];
 }
 
 // MD 파일의 frontmatter와 content를 파싱하는 함수
@@ -19,12 +19,34 @@ export function parseArtworkMD(content: string): Artwork {
     throw new Error('Invalid markdown format');
   }
   
-  const [, frontmatter, description] = match;
+  const [, frontmatter, bodyContent] = match;
   const matter: ArtworkMatter = parseFrontmatter(frontmatter);
+  
+  // body를 ## 구분자로 나누기
+  const sections = bodyContent.split(/^##\s+/m);
+  let description = '';
+  let detailedDescription = '';
+  
+  // 첫 번째 섹션 (## 이전 내용)은 기본 description
+  if (sections[0]) {
+    description = sections[0].trim();
+  }
+  
+  // ## detail 또는 ## 상세설명 섹션 찾기
+  for (let i = 1; i < sections.length; i++) {
+    const section = sections[i];
+    if (section.toLowerCase().startsWith('detail') || section.startsWith('상세설명')) {
+      // 헤더 제목 제거하고 내용만 추출
+      const lines = section.split('\n');
+      detailedDescription = lines.slice(1).join('\n').trim();
+      break;
+    }
+  }
   
   return {
     ...matter,
-    description: description.trim()
+    description: description,
+    detailedDescription: detailedDescription || undefined
   };
 }
 
@@ -34,7 +56,8 @@ function parseFrontmatter(frontmatter: string): ArtworkMatter {
   let currentKey = '';
   let inArray = false;
   
-  for (const line of lines) {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
     const trimmed = line.trim();
     if (!trimmed) continue;
     
@@ -42,7 +65,35 @@ function parseFrontmatter(frontmatter: string): ArtworkMatter {
       // Array item
       if (inArray && currentKey) {
         if (!result[currentKey]) result[currentKey] = [];
-        result[currentKey].push(trimmed.substring(1).trim().replace(/['"]/g, ''));
+        // 이미지 항목 파싱
+        if (currentKey === 'images') {
+          const imageStr = trimmed.substring(1).trim();
+          // 객체 형태인지 확인 (url: 으로 시작하는지)
+          if (imageStr.startsWith('url:')) {
+            // 객체 형태의 이미지 설정 - 첫 줄에서 url 파싱
+            const imageConfig: any = {};
+            imageConfig.url = imageStr.replace('url:', '').trim().replace(/['"]/g, '');
+            
+            // 다음 줄들에서 layout과 height 파싱
+            let j = i + 1;
+            while (j < lines.length && lines[j].startsWith('    ')) {
+              const imageLine = lines[j].trim();
+              if (imageLine.startsWith('layout:')) {
+                imageConfig.layout = imageLine.replace('layout:', '').trim().replace(/['"]/g, '');
+              } else if (imageLine.startsWith('height:')) {
+                imageConfig.height = imageLine.replace('height:', '').trim().replace(/['"]/g, '');
+              }
+              j++;
+            }
+            result[currentKey].push(imageConfig);
+            i = j - 1; // 처리한 줄만큼 건너뛰기
+          } else {
+            // 단순 문자열 형태
+            result[currentKey].push(imageStr.replace(/['"]/g, ''));
+          }
+        } else {
+          result[currentKey].push(trimmed.substring(1).trim().replace(/['"]/g, ''));
+        }
       }
     } else if (trimmed.includes(':')) {
       const [key, ...valueParts] = trimmed.split(':');
