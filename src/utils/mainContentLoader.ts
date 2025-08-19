@@ -7,7 +7,7 @@ export interface MainContent {
 
 export async function loadMainContent(): Promise<MainContent> {
   try {
-    const aboutModule = await import('/data/main/about.md?raw');
+    const aboutModule = await import('../../data/main/about.md?raw');
     const content = aboutModule.default;
     
     // Parse YAML frontmatter and content
@@ -22,7 +22,7 @@ export async function loadMainContent(): Promise<MainContent> {
     // Split content into description and contact sections
     const sections = markdownContent.split(/^## /m);
     const description = sections[0].trim();
-    const contactSection = sections.find(s => s.startsWith('Contact'));
+    const contactSection = sections.find((s: string) => s.startsWith('Contact'));
     const contact = contactSection ? contactSection.replace('Contact\n', '').trim() : '';
     
     return {
