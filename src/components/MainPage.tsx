@@ -1,22 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Artwork } from '../App';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { loadMainContent, MainContent } from '../utils/mainContentLoader';
 
 interface MainPageProps {
   artworks: Artwork[];
   onArtworkClick: (artwork: Artwork) => void;
+  onTextClick: () => void;
 }
 
-export function MainPage({ artworks, onArtworkClick }: MainPageProps) {
+export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProps) {
   const [selectedYear, setSelectedYear] = useState<number>(2024);
   const [currentArtworkIndex, setCurrentArtworkIndex] = useState<number>(0);
+  const [mainContent, setMainContent] = useState<MainContent>({
+    description: '',
+    contact: ''
+  });
 
   // 작품에서 년도 추출
   const years = [...new Set(artworks.map(artwork => artwork.year))].sort((a, b) => b - a);
   
   // 선택된 년도의 작품 필터링
   const filteredArtworks = artworks.filter(artwork => artwork.year === selectedYear);
+
+  // 메인 콘텐츠 로드
+  useEffect(() => {
+    loadMainContent().then(content => {
+      setMainContent(content);
+    });
+  }, []);
 
   // 년도가 변경될 때 인덱스 리셋
   React.useEffect(() => {
@@ -56,9 +69,14 @@ export function MainPage({ artworks, onArtworkClick }: MainPageProps) {
           ))}
         </div>
 
-        {/* CV 그룹 */}
+        {/* Text 그룹 */}
         <div className="mt-8">
-          <h3 className="mb-2 opacity-60">CV</h3>
+          <button 
+            onClick={onTextClick}
+            className="opacity-60 hover:opacity-100 transition-opacity text-left"
+          >
+            <h3 className="mb-2">Text</h3>
+          </button>
         </div>
 
       </div>
@@ -81,9 +99,14 @@ export function MainPage({ artworks, onArtworkClick }: MainPageProps) {
           ))}
         </div>
 
-        {/* CV 그룹 - 모바일 */}
+        {/* Text 그룹 - 모바일 */}
         <div className="mt-6">
-          <h3 className="mb-2 opacity-60">CV</h3>
+          <button 
+            onClick={onTextClick}
+            className="opacity-60 hover:opacity-100 transition-opacity text-left"
+          >
+            <h3 className="mb-2">Text</h3>
+          </button>
         </div>
       </div>
 
@@ -92,16 +115,25 @@ export function MainPage({ artworks, onArtworkClick }: MainPageProps) {
         <div className="md:max-w-sm md:ml-auto md:mr-24">
           {/* 정보 섹션 */}
           <div className="mb-16 space-y-2 text-sm opacity-60 text-left">
-            <p>
-              A collection of sculptural works exploring the intersection of form, 
-              material, and concept. Each piece represents a dialogue between 
-              traditional craftsmanship and contemporary artistic expression.
-            </p>
-            <div className="mt-6">
-              <p>Artist Profile</p>
-              <p>hello@example.com</p>
-              <p>Instagram</p>
+            <div>
+              {mainContent.description.split('\n\n').map((paragraph, index) => (
+                <p key={index} className={index > 0 ? "mt-4" : ""}>
+                  {paragraph.split('\n').map((line, lineIndex) => (
+                    <React.Fragment key={lineIndex}>
+                      {line}
+                      {lineIndex < paragraph.split('\n').length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </p>
+              ))}
             </div>
+            {mainContent.contact && (
+              <div className="mt-6">
+                {mainContent.contact.split('\n').map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
+              </div>
+            )}
           </div>
 
           {filteredArtworks.length > 0 && (
@@ -113,7 +145,9 @@ export function MainPage({ artworks, onArtworkClick }: MainPageProps) {
             >
               <div className="relative overflow-hidden bg-gray-100 aspect-[4/5]">
                 <ImageWithFallback
-                  src={filteredArtworks[currentArtworkIndex].images[0]}
+                  src={typeof filteredArtworks[currentArtworkIndex].images[0] === 'string' 
+                    ? filteredArtworks[currentArtworkIndex].images[0] 
+                    : filteredArtworks[currentArtworkIndex].images[0].url}
                   alt={filteredArtworks[currentArtworkIndex].title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
