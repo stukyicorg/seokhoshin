@@ -308,7 +308,7 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
                 ? `translate(${imagePosition.translateX}px, ${imagePosition.translateY}px) scale(${Math.min(window.innerWidth * 0.9 / imagePosition.width, window.innerHeight * 0.85 / imagePosition.height)})`
                 : 'translate(0, 0) scale(1)',
               transformOrigin: 'center',
-              transition: 'transform 0.2s linear',
+              transition: 'transform 0.1s linear',
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -331,8 +331,8 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
                   className="pointer-events-auto absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-50 bg-black bg-opacity-10 hover:bg-opacity-20 text-black p-3 rounded-full transition-all"
                   style={{
                     opacity: isAnimating ? 1 : 0,
-                    transition: 'opacity 0.3s ease-in-out',
-                    transitionDelay: isAnimating ? '0.2s' : '0s'
+                    transition: 'opacity 0.15s ease-in-out',
+                    transitionDelay: isAnimating ? '0.1s' : '0s'
                   }}
                   aria-label="Previous image"
                 >
@@ -352,8 +352,8 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
                   className="pointer-events-auto absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 bg-black bg-opacity-10 hover:bg-opacity-20 text-black p-3 rounded-full transition-all"
                   style={{
                     opacity: isAnimating ? 1 : 0,
-                    transition: 'opacity 0.3s ease-in-out',
-                    transitionDelay: isAnimating ? '0.2s' : '0s'
+                    transition: 'opacity 0.15s ease-in-out',
+                    transitionDelay: isAnimating ? '0.1s' : '0s'
                   }}
                   aria-label="Next image"
                 >
@@ -369,8 +369,8 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
                 className="pointer-events-auto absolute top-4 right-4 md:top-8 md:right-8 z-50 bg-black bg-opacity-10 hover:bg-opacity-20 text-black p-3 rounded-full transition-all"
                 style={{
                   opacity: isAnimating ? 1 : 0,
-                  transition: 'opacity 0.3s ease-in-out',
-                  transitionDelay: isAnimating ? '0.2s' : '0s'
+                  transition: 'opacity 0.15s ease-in-out',
+                  transitionDelay: isAnimating ? '0.1s' : '0s'
                 }}
                 aria-label="Close modal"
               >
@@ -385,8 +385,8 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
                   className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-20 text-black px-4 py-2 rounded-full text-sm"
                   style={{
                     opacity: isAnimating ? 1 : 0,
-                    transition: 'opacity 0.3s ease-in-out',
-                    transitionDelay: isAnimating ? '0.2s' : '0s'
+                    transition: 'opacity 0.15s ease-in-out',
+                    transitionDelay: isAnimating ? '0.1s' : '0s'
                   }}
                 >
                   {modalImageIndex + 1} / {artwork.images.length}
