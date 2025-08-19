@@ -60,20 +60,16 @@ export function TextPage({ onBack }: TextPageProps) {
           <h2 className="text-xl">{content.subtitle}</h2>
         </div>
 
-        {/* 2단 레이아웃 */}
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          {/* 왼쪽 컬럼 */}
-          <div className="space-y-4">
-            <p className="text-sm leading-relaxed whitespace-pre-line">
+        {/* 단일 컬럼 가운데 정렬 */}
+        <div className="max-w-3xl mx-auto mb-16 text-center">
+          <div className="space-y-6">
+            <div className="text-sm leading-relaxed whitespace-pre-line">
               {content.leftColumn}
-            </p>          
-          </div>
-
-          {/* 오른쪽 컬럼 */}
-          <div className="space-y-4">
+            </div>
+            
             <div className="text-sm leading-relaxed">
               {content.rightColumn.split('\n\n').map((paragraph, index) => (
-                <p key={index} className={index === 0 ? "italic" : ""}>
+                <p key={index} className={index === 0 ? "italic mt-8" : "mt-4"}>
                   {paragraph}
                 </p>
               ))}
@@ -83,7 +79,7 @@ export function TextPage({ onBack }: TextPageProps) {
 
         {/* 하단 푸터 텍스트 */}
         {content.footer && (
-          <div className="border-t border-black/20 pt-8 mt-8">
+          <div className="border-t border-black/20 pt-8 mt-8 text-center">
             <p className="text-sm opacity-60">{content.footer}</p>
           </div>
         )}
