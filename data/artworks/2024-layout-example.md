@@ -1,10 +1,10 @@
 ---
 id: "layout-example"
 title: "Layout Example Artwork"
-year: 2024
-projectNumber: "999"
+year: 2025
+projectNumber: "간다 Leave"
 images:
-  - url: "/images/artworks/aaa.png"
+  - url: "/images/artworks/간다_개인전 copy.jpg"
     layout: "full"
     height: "auto"
 
