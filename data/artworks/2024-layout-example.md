@@ -2,7 +2,7 @@
 id: "간다 Leave"
 title: "간다 Leave"
 year: 2025
-projectNumber: "1"
+projectNumber: "LoVE YoUR DEPoT"
 images:
   - url: "/images/artworks/간다_개인전 copy.jpg"
     layout: "full"
