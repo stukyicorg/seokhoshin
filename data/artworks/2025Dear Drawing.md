@@ -10,8 +10,8 @@ images:
 
   - url: "/images/artworks/dd_1.jpg"
     layout: "half"
-    height: "square"
-  - url: "public/images/artworks/dd_2.jpg"
+    height: "tall"
+  - url: "/images/artworks/dd_2.jpg"
     layout: "half"
     height: "square"
 
