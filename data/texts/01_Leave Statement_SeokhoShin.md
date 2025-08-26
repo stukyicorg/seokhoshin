@@ -1,5 +1,5 @@
 ---
-title: "≪간다 Leave≫"
+title: "간다-스테이트먼트"
 subtitle: "신석호"
 ---
 
