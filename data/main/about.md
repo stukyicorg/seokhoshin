@@ -9,5 +9,6 @@ Majored in animation, Shin Seokho understands time as something built layer by l
 
 ## Contact
 
+
 sxco0073@gmail.com
 @stukyic
