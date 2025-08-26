@@ -8,7 +8,7 @@ images:
     layout: "half"
     height: "auto"
 
-  - url: "/images/artworks/Group-G-2.jpg"
+  - url: "/images/artworks/간다_The Last Show copy.jpg"
     layout: "half"
     height: "square"
   - url: "/images/artworks/Group-G-3.jpg"
