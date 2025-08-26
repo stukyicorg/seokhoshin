@@ -1,12 +1,9 @@
 ---
-id: "deardrawing"
-title: "디어 드로잉 Dear Drawing"
+id: "20years"
+title: "20년"
 year: 2025
-projectNumber: "Nothing is real"
+projectNumber: "20years"
 images:
-  - url: "/images/artworks/dd_poster.jpg"
-    layout: "half"
-    height: "tall"
 
   - url: "/images/artworks/dd_1.jpg"
     layout: "half"
