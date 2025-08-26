@@ -1,5 +1,5 @@
 ---
-id: "간다 Leave"
+id: "Leave"
 title: "간다 Leave"
 year: 2025
 projectNumber: "LoVE YoUR DEPoT"
