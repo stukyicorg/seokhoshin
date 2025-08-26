@@ -1,5 +1,5 @@
 ---
-id: "2"
+id: "deardrawing"
 title: "디어 드로잉 Dear Drawing"
 year: 2025
 projectNumber: "Nothing is real"
@@ -11,16 +11,19 @@ images:
   - url: "/images/artworks/dd_1.jpg"
     layout: "half"
     height: "tall"
+    
   - url: "/images/artworks/dd_2.jpg"
     layout: "half"
-    height: "square"
+    height: "tall"
 
   - url: "/images/artworks/Group-B-2.jpg"
     layout: "third"
     height: "tall"
+    
   - url: "/images/artworks/Group-B-3.jpg"
     layout: "third"
     height: "tall"
+    
   - url: "/images/artworks/Group-B-5.jpg"
     layout: "third"
     height: "tall"
