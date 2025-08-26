@@ -6,7 +6,7 @@ projectNumber: "Nothing is real"
 images:
   - url: "/images/artworks/dd_poster.jpg"
     layout: "half"
-    height: "auto"
+    height: "tall"
 
   - url: "/images/artworks/dd_1.jpg"
     layout: "half"
@@ -14,7 +14,7 @@ images:
     
   - url: "/images/artworks/dd_2.jpg"
     layout: "half"
-    height: "tall"
+    height: "square"
 
   - url: "/images/artworks/Group-B-2.jpg"
     layout: "third"
