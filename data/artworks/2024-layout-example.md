@@ -10,7 +10,7 @@ images:
 
   - url: "/images/artworks/간다_The Last Show copy.jpg"
     layout: "half"
-    height: "square"
+    height: "auto"
   - url: "/images/artworks/Group-G-3.jpg"
     layout: "half"
     height: "square"
