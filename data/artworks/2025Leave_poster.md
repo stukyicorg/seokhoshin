@@ -11,7 +11,7 @@ images:
   - url: "/images/artworks/간다_개인전 copy.jpg"
     layout: "half"
     height: "auto"
-  - url: "/images/artworks/Group-G-3.jpg"
+  - url: "/images/artworks/LeavePoster.jpeg"
     layout: "half"
     height: "square"
 
