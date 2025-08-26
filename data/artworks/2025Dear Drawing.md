@@ -4,13 +4,13 @@ title: "디어 드로잉 Dear Drawing"
 year: 2025
 projectNumber: "Nothing is real"
 images:
-  - url: "/images/artworks/dd_1.jpg"
+  - url: "public/images/artworks/dd_posterJPG"
     layout: "half"
     height: "auto"
 
-  - url: "/images/artworks/간다_The Last Show copy.jpg"
+  - url: "/images/artworks/dd_1.jpg"
     layout: "half"
-    height: "auto"
+    height: "square"
   - url: "/images/artworks/Group-G-3.jpg"
     layout: "half"
     height: "square"
