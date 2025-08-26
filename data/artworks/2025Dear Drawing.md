@@ -16,11 +16,11 @@ images:
     layout: "half"
     height: "square"
 
-  - url: "/images/artworks/Group-B-2.jpg"
-    layout: "third"
+  - url: "/images/artworks/dd_3.jpg"
+    layout: "half"
     height: "tall"
     
-  - url: "/images/artworks/Group-B-3.jpg"
+  - url: "/images/artworks/dd_3.jpg"
     layout: "third"
     height: "tall"
     
