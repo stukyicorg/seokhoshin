@@ -4,7 +4,7 @@ title: "디어 드로잉 Dear Drawing"
 year: 2025
 projectNumber: "Nothing is real"
 images:
-  - url: "/images/artworks/DD_lackage_1"
+  - url: "public/images/artworks/DD_lackage_1"
     layout: "half"
     height: "auto"
 
