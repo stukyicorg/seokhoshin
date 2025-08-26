@@ -12,17 +12,17 @@ images:
     layout: "half"
     height: "tall"
     
-  - url: "/images/artworks/dd_2.jpg"
-    layout: "half"
+  - url: "/images/artworks/dd_1_1.jpg"
+    layout: "third"
     height: "square"
 
-  - url: "/images/artworks/dd_3.jpg"
-    layout: "half"
-    height: "tall"
-    
-  - url: "/images/artworks/dd_3.jpg"
+  - url: "/images/artworks/dd_1_2.jpg"
     layout: "third"
-    height: "tall"
+    height: "square"
+    
+  - url: "/images/artworks/dd_1_3.jpg"
+    layout: "third"
+    height: "square"
     
   - url: "/images/artworks/Group-B-5.jpg"
     layout: "third"
