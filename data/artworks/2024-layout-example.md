@@ -5,7 +5,7 @@ year: 2025
 projectNumber: "LoVE YoUR DEPoT"
 images:
   - url: "/images/artworks/간다_개인전 copy.jpg"
-    layout: "full"
+    layout: "half"
     height: "auto"
 
   - url: "/images/artworks/Group-G-2.jpg"
