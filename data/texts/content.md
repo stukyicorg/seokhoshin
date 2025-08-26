@@ -1,19 +1,33 @@
 ---
-title: "TEST STUDIO DOC"
-subtitle: "LOREM IPSUM DOLOR"
+title: "Dear Drawing II: TRACE, FOLLOW, LIFT, and PLOP!"
+subtitle: "Jongheon Bae, Wojciech Gilewicz, Hong Lee Hyunsook, Hyungji Park, 
+Sascha Pohle, Seokho Shin"
 ---
 
-## leftColumn
-Sed a suscipit tortor. Pellentesque volutpat metus a odio sollicitudin pulvinar.
-In finibus metus at eros faucibus consequat. Ut posuere interdum leo id pharetra. Vivamus pellentesque, lectus.
-Fusce id vehicula ipsum. Duis lacinia porttitor justo, ac interdum leo sollicitudin quis. Praesent bibendum a elit non efficitur.
-Etiam et velit vitae quam aliquet fermentum.
-Quisque sit amet nulla dictum, cursus erat a, tempus est.
+2025.07.21.- 08.10.
+Open 1-7pm, Closed on 7/28 (Mon) & 8/4 (Mon)
+Curated by NOTHINGISREAL and Soyung Lee
 
-*Curabitur vitae odio pretium*, volutpat augue efficitur, ullamcorper ante. Nunc ultrices eget urna in aliquet. Nulla at ullamcorper leo. Aliquam egestas non lacus sed tempor. Ut bibendum mauris sit amet augue mollis, et tincidunt nisl gravida. Proin dictum dapibus libero vitae luctus. *Morbi gravida dolor sit amet erat sagittis, suscipit blandit nibh ullamcorper.*
+Project Space NOTHINGISREAL
+Hyehwa-ro 9gil 7, 3F, Jongno-gu, SEOUL, KOREA
+Email. nothingisreal.ps@gmail.com  Tel. 0507-1485-4525  @nothingisreal_nothingisreal
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl metus, accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet urna ut mi tempor euismod. Fusce elementum sapien eget elit sodales fringilla. Pellentesque et nulla vel velit malesuada fermentum vitae vitae justo. Nulla dignissim volutpat interdum. Pellentesque at molestie tortor. Proin magna ante, fermentum ac elementum at, lacinia et arcu.
 
-*Ut volutpat pharetra orci*, ac bibendum nunc vulputate in. Praesent porttitor venenatis lacus sed mollis. Nulla varius leo nec porta tempus. Nunc orci enim, bibendum in gravida eu, pretium eu purus. Sed vestibulum quam sed eros malesuada hendrerit. Praesent pellentesque ipsum non commodo congue. Nam et metus malesuada leo aliquet facilisis in in enim. In consequat orci eleifend, feugiat eros eu, lobortis purus. Curabitur facilisis gravida ipsum a tempus. Vestibulum pharetra, magna eu eleifend ultricies, sem tellus ullamcorper elit, sed porttitor nisl libero non dui. Aenean porttitor arcu sem. Sed id ipsum felis. Vivamus ut placerat ex, sit amet eleifend ligula.
+“What kind of drawing are you making? What does drawing mean to you?”
 
-Curabitur vitae odio pretium, volutpat augue efficitur, ullamcorper ante. Nunc ultrices eget urna in aliquet. Nulla at ullamcorper leo.
+The first Dear Drawing exhibition, held in 2024 and organized by Project Space NOTHINGISREAL, explored the fundamental act of “drawing” and its modes of representation. This year, Dear Drawing II: Trace, Follow, Lift, and Plop! turns its attention toward drawing as a form of sensory thought and performative gesture—drawing as a process untethered from clear goals or fixed outcomes.
+
+In this exhibition, we approach drawing as “a performative practice of the artist, an accumulation of time traced or imprinted and, at times, an impulsive flow of sense—like tossing a coin on the road to decide which direction to take.” It is not a journey fixed on outcomes or guided strictly by intention, but one in which the hand, the leg, the whole body or even an object is entrusted with a measure of agency. Here, drawing is proposed not merely as a visual act but as a journey through performative time and purposeless space. While typically considered a foundational visual form—like a line on paper—drawing, in this context, functions as a mode of perception, a way of experiencing the world. Drawing, then, is less about skill or technique than it is about repetition, time, relationality, and density.
+
+Each work in the exhibition emerges from a performative attitude and unfolds through sensory connections. It leans toward direction rather than a destination and places greater value on relationships and traces than on outcomes. The intrinsic qualities of drawing—repetition, accumulation, hesitation, improvisation, and movement—are embedded in video frames, installation structures, and layers of paint, creating spaces where perception comes to rest. This sensibility resonates with a way of being in the world, navigating uncertainty without demanding resolution.
+
+Wojciech Gilewicz’s cuboids wander through the space, stepping away from fixed roles and centrality, expanding their meaning as they detach from set functions or locations. Seokho Shin’s installation, constructed from the remains of a demolished house, carries the echo of lived time; his focus lies not on finished form but on accumulation, trace, and the body’s engagement. Sascha Pohle weaves cultural remnants into sculptural forms—net-bag imprints on ceramics translate tactile memory into visual surfaces, while styrofoam buoys beneath them suggest weathered time in another place. 
+
+Hong Lee Hyunsook’s body draws as she climbs a rock face, leaving behind trajectories traced not with tools but through motion. These lines do not remain fixed on the surface but waver and float within the video, becoming drawing in flux. Her gestures—touching rock, tracing the carved surface of a Buddhist image—expand drawing into an embodied and sensory act. Jongheon Bae moves while carrying a handmade drawing toolbox, drawing sections of concrete floors that come into view through a wooden frame. Within the perceptual boundaries defined by the frame, we follow the artist’s gaze and the world he perceives. Meanwhile, Hyungji Park has shifted her painting practice from canvas to paper. Her works unfold intuitively through repeated brushstrokes and the lingering traces of material, capturing the moment where sensation meets thought.
+
+Across diverse media and forms, the participating artists enact a drawing-like sensitivity. It appears through bodily movement, the arrangement of objects, the density of time, and the afterimage of relationships. In this exhibition, drawing is not a form but a posture, an act, a mode of being. Rather than aiming for understanding, the exhibition invites us to linger, to follow, and to quietly sense with an open attitude and an unfinished flow.
+
+## footer
+
+Soyung Lee
+
