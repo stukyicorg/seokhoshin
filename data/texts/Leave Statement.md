@@ -10,15 +10,6 @@ subtitle: "The Last Show of LoVE YoUR DEPot"
 
 내가 원망하고 또 그럼에도 불구하고 오랜 시간 살아온 집의 재료들을 수집해서 재구축했다. 어느 삶의 구간에서 나와 가족들의 일상에 함께 머물러 온 사물들을 아카이빙하고 다시 구조와 질서를 만들어 그 시간들을 불러내는 작업이 필요했던 이유는 원망스럽지만 시간이 지나 사라지는 많은 것들을 대신해 남아 있는 이 물질에 애정이 가기 때문이다. 밉고도 사랑스러운 순간들에 대한 미련 때문이다.
 
-images:
-  - url: "/images/artworks/간다_개인전 copy.jpg"
-    layout: "half"
-    height: "auto"
-
-  - url: "/images/artworks/간다_The Last Show copy.jpg"
-    layout: "half"
-    height: "auto"
-    
 ## footer
 
 © 2025 Seokho Shin - All rights reserved
