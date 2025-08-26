@@ -4,13 +4,15 @@ title: "《간다》 포스터"
 year: 2025
 projectNumber: "《Leave》 Poster"
 images:
+
   - url: "/images/artworks/간다_The Last Show copy.jpg"
     layout: "half"
     height: "auto"
-
+    
   - url: "/images/artworks/간다_개인전 copy.jpg"
     layout: "half"
     height: "auto"
+    
   - url: "/images/artworks/LeavePoster.jpeg"
     layout: "half"
     height: "square"
