@@ -4,7 +4,7 @@ title: "Animation Test"
 year: 2024
 projectNumber: "888"
 images:
-  - url: "/images/artworks/Group-G-2.jpg"
+  - url: "public/images/artworks/20years_1.jpg"
     layout: "full"
   - url: "/images/artworks/Group-B-2.jpg"
     layout: "half"
