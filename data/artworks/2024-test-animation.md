@@ -6,7 +6,7 @@ projectNumber: "888"
 images:
   - url: "/images/artworks/20years1.jpg"
     layout: "full"
-  - url: "/images/artworks/Group-B-2.jpg"
+  - url: "https://drive.google.com/file/d/1S9RCvY_pLsvwJTfJGjuHGOAiC-eLYhQE/view?usp=sharing"
     layout: "half"
   - url: "/images/artworks/Group-B-3.jpg"
     layout: "half"
