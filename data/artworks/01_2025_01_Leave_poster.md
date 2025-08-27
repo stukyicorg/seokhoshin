@@ -12,9 +12,6 @@ images:
     layout: "half"
     height: "auto"
     
-  - url: "/images/artworks/LeavePoster.jpeg"
-    layout: "half"
-    height: "square"
 ---
 
 이미지 레이아웃 예시 작품입니다. 다양한 레이아웃 옵션을 보여줍니다.
