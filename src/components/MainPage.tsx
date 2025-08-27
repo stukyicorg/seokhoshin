@@ -18,21 +18,8 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
     contact: ''
   });
 
-  /// 작품에서 년도 추출 (중복 제거 + 내림차순 정렬)
-  const years = React.useMemo(
-    () => [...new Set(artworks.map(a => a.year))].sort((a, b) => b - a),
-    [artworks]
-  );
-
-  // 가장 최신 년도를 기본값으로 선택
-  const [selectedYear, setSelectedYear] = useState<number>(() => years[0] ?? new Date().getFullYear());
-
-  // artworks가 바뀌었을 때 선택된 년도가 목록에 없으면 최신 년도로 업데이트
-  React.useEffect(() => {
-    if (years.length && !years.includes(selectedYear)) {
-      setSelectedYear(years[0]);
-    }
-  }, [years, selectedYear]);
+  // 작품에서 년도 추출
+  const years = [...new Set(artworks.map(artwork => artwork.year))].sort((a, b) => b - a);
   
   // 선택된 년도의 작품 필터링
   const filteredArtworks = artworks.filter(artwork => artwork.year === selectedYear);
