@@ -2,7 +2,7 @@
 id: "Leave"
 title: "《간다》 포스터"
 year: 2025
-projectNumber: "《Leave》 Poster"
+projectNumber: "1"
 images:
   - url: "/images/artworks/간다_The Last Show copy.jpg"
     layout: "half"
@@ -13,21 +13,10 @@ images:
     height: "auto"
     
 ---
+《간다》 포스터
+종이에 디지털 프린트, A2
 
-이미지 레이아웃 예시 작품입니다. 다양한 레이아웃 옵션을 보여줍니다.
-
-첫 번째 이미지는 전체 너비(full)로 표시되고, 두 번째와 세 번째는 반반(half) 정사각형으로, 마지막 세 개는 1/3씩(third) 세로로 긴 형태로 표시됩니다.
+《Leave》 poster
+Digital print on paper, A2
 
 ## detail
-
-**레이아웃 옵션:**
-- `layout: "full"` - 전체 너비
-- `layout: "half"` - 절반 너비 (2개씩 한 줄)
-- `layout: "third"` - 1/3 너비 (3개씩 한 줄)
-- `layout: "quarter"` - 1/4 너비 (4개씩 한 줄)
-
-**높이 옵션:**
-- `height: "auto"` - 원본 비율 유지
-- `height: "tall"` - 세로로 긴 형태 (3:4 비율)
-- `height: "square"` - 정사각형
-- `height: "short"` - 가로로 긴 형태 (4:3 비율)
