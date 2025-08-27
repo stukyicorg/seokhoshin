@@ -300,18 +300,59 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
         <h1 className="mb-4 opacity-60">Seokho Shin</h1>
         <h2 className="mb-2 opacity-60">Works</h2>
         <div className="flex flex-wrap gap-4">
-          {years.map((year, index) => (
-            <button
-              key={year}
-              onClick={() => setSelectedYear(year)}
-              className={`px-3 py-1 rounded transition-opacity hover:opacity-100 ${
-                selectedYear === year ? 'opacity-100 bg-black text-white' : 'opacity-60'
-              }`}
-            >
-              {year}
-            </button>
-          ))}
+          {years.map((year, index) => {
+            const yearArtworks = artworks
+              .filter(artwork => artwork.year === year)
+              .sort((a, b) => {
+                const aNum = parseInt(a.projectNumber.replace(/[^0-9]/g, '') || '0');
+                const bNum = parseInt(b.projectNumber.replace(/[^0-9]/g, '') || '0');
+                return aNum - bNum;
+              });
+            return (
+              <button
+                key={year}
+                onClick={() => setSelectedYear(year)}
+                className={`px-3 py-1 rounded transition-opacity hover:opacity-100 ${
+                  selectedYear === year ? 'opacity-100 bg-black text-white' : 'opacity-60'
+                }`}
+              >
+                {year}
+              </button>
+            );
+          })}
         </div>
+
+        {/* 선택된 년도의 작품 목록 - 모바일 */}
+        {years.map((year) => {
+          const yearArtworks = artworks
+            .filter(artwork => artwork.year === year)
+            .sort((a, b) => {
+              const aNum = parseInt(a.projectNumber.replace(/[^0-9]/g, '') || '0');
+              const bNum = parseInt(b.projectNumber.replace(/[^0-9]/g, '') || '0');
+              return aNum - bNum;
+            });
+          
+          if (selectedYear === year && yearArtworks.length > 0) {
+            return (
+              <div key={`submenu-${year}`} className="mt-4 pl-4 space-y-1">
+                {yearArtworks.map((artwork, idx) => (
+                  <button
+                    key={artwork.id || idx}
+                    onClick={() => {
+                      setCurrentArtworkIndex(idx);
+                    }}
+                    className={`block text-left text-sm transition-opacity hover:opacity-100 ${
+                      currentArtworkIndex === idx ? 'opacity-100' : 'opacity-60'
+                    }`}
+                  >
+                    {artwork.title}
+                  </button>
+                ))}
+              </div>
+            );
+          }
+          return null;
+        })}
 
         {/* Text 그룹 - 모바일 */}
         <div className="mt-6">
