@@ -54,10 +54,22 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
     });
   }, []);
 
-  // 년도가 변경될 때 인덱스 리셋
+  // 년도가 변경될 때 인덱스 리셋 및 안전성 확인
   React.useEffect(() => {
     setCurrentArtworkIndex(0);
+    setDragOffset(0);
+    setIsDragging(false);
+    setMouseStart(null);
+    setTouchStart(null);
+    setTouchEnd(null);
   }, [selectedYear]);
+
+  // currentArtworkIndex가 유효한 범위를 벗어나면 보정
+  React.useEffect(() => {
+    if (filteredArtworks.length > 0 && currentArtworkIndex >= filteredArtworks.length) {
+      setCurrentArtworkIndex(0);
+    }
+  }, [filteredArtworks.length, currentArtworkIndex]);
 
   // 전역 마우스 이벤트 핸들러를 위한 useEffect
   React.useEffect(() => {
@@ -137,15 +149,19 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
   }, [filteredArtworks.length, currentArtworkIndex]);
 
   const handleNextArtwork = () => {
-    setCurrentArtworkIndex((prev) => 
-      prev < filteredArtworks.length - 1 ? prev + 1 : 0
-    );
+    if (filteredArtworks.length <= 1) return; // 작품이 1개 이하면 이동 불필요
+    setCurrentArtworkIndex((prev) => {
+      const nextIndex = prev < filteredArtworks.length - 1 ? prev + 1 : 0;
+      return nextIndex < filteredArtworks.length ? nextIndex : 0;
+    });
   };
 
   const handlePrevArtwork = () => {
-    setCurrentArtworkIndex((prev) => 
-      prev > 0 ? prev - 1 : filteredArtworks.length - 1
-    );
+    if (filteredArtworks.length <= 1) return; // 작품이 1개 이하면 이동 불필요
+    setCurrentArtworkIndex((prev) => {
+      const prevIndex = prev > 0 ? prev - 1 : filteredArtworks.length - 1;
+      return prevIndex < filteredArtworks.length ? prevIndex : 0;
+    });
   };
 
 
@@ -220,7 +236,7 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
     if (!mouseStart || isDragging) return; // 드래그 중이면 전역 핸들러에서 처리
     
     // 클릭한 경우만 처리
-    if (!isDragging) {
+    if (!isDragging && filteredArtworks[currentArtworkIndex]) {
       onArtworkClick(filteredArtworks[currentArtworkIndex]);
     }
   };
@@ -391,7 +407,7 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
             )}
           </div>
 
-          {filteredArtworks.length > 0 && (
+          {filteredArtworks.length > 0 && filteredArtworks[currentArtworkIndex] && (
             <div className="relative">
             {/* 현재 작품 */}
             <div 
