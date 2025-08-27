@@ -2,7 +2,7 @@
 id: "Leave"
 title: "《간다》 포스터"
 year: 2025
-projectNumber: "《Leave》 poster"
+projectNumber: "1"
 images:
   - url: "/images/artworks/간다_The Last Show copy.jpg"
     layout: "full"
