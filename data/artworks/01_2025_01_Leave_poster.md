@@ -9,7 +9,7 @@ images:
     height: "auto"
     
   - url: "/images/artworks/간다_개인전 copy.jpg"
-    layout: "half"
+    layout: "full"
     height: "auto"
     
 ---
