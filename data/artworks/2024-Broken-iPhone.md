@@ -10,7 +10,7 @@ images:
   - url: "/images/artworks/BrokenIphone1.jpeg"
     layout: "full"
     height: "short"
-    - url: "/images/artworks/BrokenIphone2.JPG"
+  - url: "/images/artworks/BrokenIphone2.JPG"
     layout: "full"
     height: "short"
 ---
