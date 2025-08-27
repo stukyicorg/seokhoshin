@@ -1,15 +1,15 @@
 ---
-id: "test-animation"
-title: "Animation Test"
+id: "brokeniphone"
+title: "부서진 아이폰"
 year: 2024
-projectNumber: "888"
+projectNumber: "Broken iPhone"
 images:
-  - url: "/images/artworks/20years1.jpg"
+  - url: "/images/artworks/BrokenIphone1.jpeg"
     layout: "full"
-  - url: "https://drive.google.com/file/d/1S9RCvY_pLsvwJTfJGjuHGOAiC-eLYhQE/view?usp=sharing"
-    layout: "half"
-  - url: "/images/artworks/Group-B-3.jpg"
-    layout: "half"
+    height: "short"
+  - url: "/images/artworks/BrokenIphone2.JPG"
+    layout: "full"
+    height: "short"
 ---
 
 이미지 애니메이션 테스트용 작품입니다.
