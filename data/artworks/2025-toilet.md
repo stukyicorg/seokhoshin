@@ -12,11 +12,11 @@ images:
     layout: "half"
     height: "full"
    
-  - url: "/images/artworks/toilet.jpg"
+  - url: "/images/artworks/toilet2.jpg"
     layout: "half"
     height: "full"
     
-  - url: "/images/artworks/toilet2.jpg"
+  - url: "/images/artworks/toilet.jpg"
     layout: "half"
     height: "auto"
     
