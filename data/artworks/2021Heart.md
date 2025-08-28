@@ -1,6 +1,6 @@
 ---
 id: "heart"
-title: "하트"
+title: "하트 Heart"
 year: 2021
 projectNumber: "1"
 images:
