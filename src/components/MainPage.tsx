@@ -350,20 +350,22 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
           
           if (selectedYear === year && yearArtworks.length > 0) {
             return (
-              <div key={`submenu-${year}`} className="mt-4 pl-4 space-y-1">
-                {yearArtworks.map((artwork, idx) => (
-                  <button
-                    key={artwork.id || idx}
-                    onClick={() => {
-                      setCurrentArtworkIndex(idx);
-                    }}
-                    className={`block text-left text-sm transition-opacity hover:opacity-100 ${
-                      currentArtworkIndex === idx ? 'opacity-100' : 'opacity-60'
-                    }`}
-                  >
-                    {artwork.title}
-                  </button>
-                ))}
+              <div key={`submenu-${year}`} className="mt-4 pl-4">
+                <div className="flex flex-wrap gap-x-3 gap-y-1">
+                  {yearArtworks.map((artwork, idx) => (
+                    <button
+                      key={artwork.id || idx}
+                      onClick={() => {
+                        setCurrentArtworkIndex(idx);
+                      }}
+                      className={`text-sm transition-opacity hover:opacity-100 ${
+                        currentArtworkIndex === idx ? 'opacity-100' : 'opacity-60'
+                      }`}
+                    >
+                      {artwork.title}
+                    </button>
+                  ))}
+                </div>
               </div>
             );
           }
