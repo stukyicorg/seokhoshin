@@ -5,7 +5,7 @@ year: 2023
 projectNumber: "기사"
 images:
   - url: "/images/artworks/knight1.jpeg"
-    layout: "full"
+    layout: "half"
     height: "tall"
 
   - url: "/images/artworks/knight2.jpeg"
