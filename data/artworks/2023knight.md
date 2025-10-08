@@ -17,9 +17,13 @@ images:
 
 ---
 
-‣ ≪기사 Knight≫
+‣ ≪기사≫
 
 steel, hinge, putty
+
+‣ ≪Knight≫
+
+철, 경첩, 퍼티
 
 680 x 450 x 820
 
