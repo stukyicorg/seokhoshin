@@ -1,8 +1,8 @@
 ---
 id: "heart"
-title: "하트 Heart"
+title: "Heart"
 year: 2021
-projectNumber: "1"
+projectNumber: "하트"
 images:
   - url: "/images/artworks/Heart1.jpeg"
     layout: "full"
