@@ -1,8 +1,8 @@
 ---
 id: "toilet"
-title: "화장실 Toilet"
+title: "Toilet"
 year: 2025
-projectNumber: "3"
+projectNumber: "화장실"
 images:
   - url: "/images/artworks/toilet1.jpg"
     layout: "half"
@@ -34,10 +34,10 @@ images:
     
 ---
 
-이 작품은 예시입니다.
+‣ ≪화장실≫
 
-이미지 경로 사용 방법:
+철거된 집의 화장실 자재
 
-1. 로컬 이미지: "/images/artworks/파일명.jpg" (public 폴더 기준)
+‣ ≪Toilet≫
 
-2. 외부 URL: "https://..." (전체 URL)
+Toilet fragments from a demolished house
