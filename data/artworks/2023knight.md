@@ -17,8 +17,8 @@ images:
 
 ---
 
-‣
-≪기사 Knight≫
+‣ ≪기사 Knight≫
+
 steel, hinge, putty
 
 680 x 450 x 820
