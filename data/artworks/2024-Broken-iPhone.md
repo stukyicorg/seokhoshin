@@ -1,8 +1,8 @@
 ---
 id: "brokeniphone"
-title: "부서진 아이폰"
+title: "Broken iPhone"
 year: 2024
-projectNumber: "Broken iPhone"
+projectNumber: "부서진 아이폰"
 images:
   - url: "/images/artworks/BrokenIphone0.JPG"
     layout: "full"
