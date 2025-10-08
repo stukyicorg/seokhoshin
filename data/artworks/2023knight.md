@@ -1,11 +1,11 @@
 ---
 id: "knight"
-title: "기사"
+title: "Knight"
 year: 2023
-projectNumber: "1"
+projectNumber: "기사"
 images:
   - url: "/images/artworks/knight1.jpeg"
-    layout: "third"
+    layout: "full"
     height: "tall"
 
   - url: "/images/artworks/knight2.jpeg"
@@ -18,11 +18,7 @@ images:
 ---
 
 ‣
-≪기사≫
-철,경첩,퍼티
-
-‣
-≪Knight≫
+≪기사 Knight≫
 steel, hinge, putty
 
 680 x 450 x 820
