@@ -19,11 +19,13 @@ images:
 
 ‣ ≪기사≫
 
-steel, hinge, putty
+철, 경첩, 퍼티
+
+
 
 ‣ ≪Knight≫
 
-철, 경첩, 퍼티
+steel, hinge, putty
 
 680 x 450 x 820
 
