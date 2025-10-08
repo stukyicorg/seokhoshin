@@ -14,7 +14,13 @@ images:
   
 ---
 
-‣ ≪하트 Heart≫ steel
+‣ ≪하트≫
+
+철
+
+‣ ≪Heart≫ 
+
+steel
 
 fold: 460 x 500 x 410
 unfold: 640 x 700 x 120
