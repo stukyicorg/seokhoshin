@@ -11,10 +11,6 @@ images:
   - url: "/images/artworks/drying2.jpg"
     layout: "half"
     height: "tall"
-
-  - url: "/images/artworks/drying3.jpg"
-    layout: "third"
-    height: "tall"
   - url: "/images/artworks/drying3.jpg"
     layout: "third"
     height: "tall"
