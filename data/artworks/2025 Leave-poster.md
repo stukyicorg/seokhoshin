@@ -1,8 +1,8 @@
 ---
 id: "Leave"
-title: "《Leave》 Poster"
+title: "Leave"
 year: 2025
-projectNumber: "《간다》 포스터"
+projectNumber: "간다"
 images:
   - url: "/images/artworks/leave-last-web.jpg"
     layout: "half"
@@ -11,15 +11,46 @@ images:
   - url: "/images/artworks/leave-solo-web.jpg"
     layout: "half"
     height: "auto"
-    
+
+  - url: "/images/artworks/leave1.jpg"
+    layout: "half"
+    height: "auto"
+
+  - url: "/images/artworks/leave1-4.jpg"
+    layout: "half"
+    height: "auto"
+
+     - url: "/images/artworks/leave1-5.jpg"
+    layout: "half"
+    height: "auto"
+
+ - url: "/images/artworks/leave1-1.jpg"
+    layout: "half"
+    height: "auto"
+
+ - url: "/images/artworks/leave1-2.jpg"
+    layout: "half"
+    height: "auto"
+
+ - url: "/images/artworks/leave1-3.jpg"
+    layout: "half"
+    height: "auto"
+
+ - url: "/images/artworks/leave2.jpg"
+    layout: "half"
+    height: "auto"
+
+ - url: "/images/artworks/leave3.jpg"
+    layout: "half"
+    height: "auto"
 ---
-‣ 《간다》 포스터
+‣ 간다
 
-종이에 디지털 프린트, A2
+철거된 집의 자재
 
-‣ 《Leave》 Poster
+‣ Leave
 
-Digital print on paper, A2
+Fragments from a demolished house
 
 ## detail
 
