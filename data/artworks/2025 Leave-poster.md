@@ -12,37 +12,39 @@ images:
     layout: "half"
     height: "auto"
 
-  - url: "/images/artworks/leave1.jpg"
-    layout: "half"
-    height: "auto"
+  - url: "/images/artworks/Leave1.JPG"
+    layout: "third"
+    height: "full"
+    
+  - url: "/images/artworks/Leave1-4.jpeg"
+    layout: "third"
+    height: "full"
 
-  - url: "/images/artworks/leave1-4.jpg"
-    layout: "half"
-    height: "auto"
+  - url: "/images/artworks/Leave1-5.jpeg"
+    layout: "third"
+    height: "full"
+    
+  - url: "/images/artworks/Leave1-1.jpeg"
+    layout: "third"
+    height: "full"
 
-     - url: "/images/artworks/leave1-5.jpg"
-    layout: "half"
-    height: "auto"
+  - url: "/images/artworks/Leave1-2.jpeg"
+    layout: "third"
+    height: "full"
+    
+  - url: "/images/artworks/Leave1-3.jpeg"
+    layout: "third"
+    height: "full"
+  
+  - url: "/images/artworks/Leave2.JPG"
+    layout: "third"
+    height: "full"
+    
+  - url: "/images/artworks/Leave3.JPG"
+    layout: "third"
+    height: "full"
 
- - url: "/images/artworks/leave1-1.jpg"
-    layout: "half"
-    height: "auto"
 
- - url: "/images/artworks/leave1-2.jpg"
-    layout: "half"
-    height: "auto"
-
- - url: "/images/artworks/leave1-3.jpg"
-    layout: "half"
-    height: "auto"
-
- - url: "/images/artworks/leave2.jpg"
-    layout: "half"
-    height: "auto"
-
- - url: "/images/artworks/leave3.jpg"
-    layout: "half"
-    height: "auto"
 ---
 ‣ 간다
 
