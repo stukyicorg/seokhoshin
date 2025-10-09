@@ -26,9 +26,16 @@ images:
     height: "tall"
 ---
 
-이미지 레이아웃 예시 작품입니다. 다양한 레이아웃 옵션을 보여줍니다.
+‣ ≪건조 중≫
 
-첫 번째 이미지는 전체 너비(full)로 표시되고, 두 번째와 세 번째는 반반(half) 정사각형으로, 마지막 세 개는 1/3씩(third) 세로로 긴 형태로 표시됩니다.
+철거된 집의 꽃무늬 벽지, 철
+
+
+‣ ≪It's drying≫
+
+Floral wallpaper from a demolished house, steel
+
+127 x 46 x 70
 
 ## detail
 
