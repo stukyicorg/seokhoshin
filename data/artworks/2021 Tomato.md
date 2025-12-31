@@ -7,18 +7,18 @@ images:
 
   - url: "/images/artworks/tomato1.jpeg"
     layout: "half"
-    height: "tall"
+    height: "squre"
     
   - url: "/images/artworks/tomato2.jpeg"
     layout: "half"
-    height: "tall"
+    height: "square"
     
   - url: "/images/artworks/tomato3.jpeg"
-    layout: "third"
+    layout: "half"
     height: "square"
     
   - url: "/images/artworks/tomato4.jpeg"
-    layout: "third"
+    layout: "half"
     height: "square"
     
   
