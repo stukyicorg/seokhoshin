@@ -1,0 +1,48 @@
+---
+id: "Tent"
+title: "Tent"
+year: 2025
+projectNumber: "텐트"
+images:
+
+  - url: "/images/artworks/tent1.png"
+    layout: "half"
+    height: "tall"
+    
+  - url: "/images/artworks/tent2.JPG"
+    layout: "half"
+    height: "tall"
+    
+  - url: "/images/artworks/tent3.JPG"
+    layout: "third"
+    height: "square"
+    
+  - url: "/images/artworks/tent4.JPG"
+    layout: "third"
+    height: "square"
+    
+  - url: "/images/artworks/tent5.JPG"
+    layout: "third"
+    height: "square"
+
+    - url: "/images/artworks/tent6.JPG"
+    layout: "third"
+    height: "square"
+
+- url: "/images/artworks/tent7.png"
+    layout: "third"
+    height: "square"
+---
+‣ ≪텐트≫
+
+철, 나무
+
+‣ ≪Tent≫
+
+steel, wood
+
+
+## detail
+
+
+
