@@ -8,7 +8,7 @@ images:
     layout: "half"
     height: "full"
     
- - url: "/images/artworks/toilet1-1.jpg"
+  - url: "/images/artworks/toilet1-1.jpg"
     layout: "half"
     height: "full"
    
@@ -34,10 +34,8 @@ images:
     
 ---
 
-‣ ≪화장실≫
+‣ ≪화장실≫ 철거된 집의 화장실 자재
 
-철거된 집의 화장실 자재
+‣ ≪Toilet≫ Toilet fragments from a demolished house
 
-‣ ≪Toilet≫
-
-Toilet fragments from a demolished house
+dimensions variable
