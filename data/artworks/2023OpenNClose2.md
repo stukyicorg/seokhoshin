@@ -42,11 +42,9 @@ images:
     height: "short"    
        
 ---
-‣ ≪열고닫기2≫
-철, 나무, 경첩
+‣ ≪열고닫기2≫ 철, 나무, 경첩
 
-‣ ≪Open&Close2≫
-steel, wood, hinge
+‣ ≪Open&Close2≫ steel, wood, hinge
 
 dimensions variable
 
