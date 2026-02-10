@@ -14,13 +14,9 @@ images:
     layout: "full"
     height: "short"
 ---
-‣ ≪부서진 아이폰≫
+‣ ≪부서진 아이폰≫ 대리석 타일
 
-대리석 타일
-
-‣ ≪Broken iPhone≫
-
-marble tiles
+‣ ≪Broken iPhone≫ marble tiles
 
 ## detail
 
