@@ -29,6 +29,6 @@ images:
 
 
 ## detail
-
+[Video](https://youtu.be/2eCdPPABehk?si=kPNicdACw1HeGqsU)
 
 
