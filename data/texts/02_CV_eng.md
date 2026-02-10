@@ -6,7 +6,7 @@ subtitle: "Seokho Shin"
 2021·BFA of Animation, Korea National University of Arts
  
 Solo Exhibition
-2026·≪RoomooR≫ Faction
+2026·≪RoomooR≫, Faction
 2025·≪Leave≫, Your Depot-Underdepot
 
 Group Exhibition
@@ -17,7 +17,7 @@ Group Exhibition
  
 Selected Screenings
 2024·Jeonju International Film Festival, Jeonju
-········Animafest, Zagreb(Croatia)
+··········Animafest, Zagreb(Croatia)
 ·····Daegu Independent Short Film Festival, Daegu
 ·····Bucheon International Animation Festival, Bucheon
 ·····Korean Short Film Award, Seoul
