@@ -30,7 +30,7 @@ images:
 
 ‣ ≪Tomato≫ steel, hydraulic cylinder
 
-[ㅁㄴㅇㅁㄴㅇ](https://naver.com)
+[Video](https://youtu.be/2eCdPPABehk?si=kPNicdACw1HeGqsU)
 
 ## detail
 
