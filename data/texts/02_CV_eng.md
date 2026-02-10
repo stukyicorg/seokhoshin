@@ -1,7 +1,9 @@
 ---
 title: ""
-subtitle: "Seokho Shin"
+subtitle: ""
 ---
+Seokho Shin
+
 2025 MFA of Video Art, Korea National University of Arts
 2021 BFA of Animation, Korea National University of Arts
  
@@ -18,14 +20,14 @@ Group Exhibition
 Selected Screenings
 2024 Jeonju International Film Festival, Jeonju
 · · · ·ㅤ· Animafest, Zagreb(Croatia)
-·····Daegu Independent Short Film Festival, Daegu
-·····Bucheon International Animation Festival, Bucheon
-·····Korean Short Film Award, Seoul
-·····Seoul Indie-AniFest, Seoul
+· · · ·ㅤ· Daegu Independent Short Film Festival, Daegu
+· · · ·ㅤ· Bucheon International Animation Festival, Bucheon
+· · · ·ㅤ· Korean Short Film Award, Seoul
+· · · ·ㅤ· Seoul Indie-AniFest, Seoul
 2021 click for flicks, Clermont-Ferrand (France)
 2020 ONE Country ONE Film International Festival - 11th edition, Issoire (France)
-·····Seoul Indie-AniFest, Seoul
-·····KuanDu International Animation Festival, Kuandu(Taiwan)
+· · · ·ㅤ· Seoul Indie-AniFest, Seoul
+· · · ·ㅤ· KuanDu International Animation Festival, Kuandu(Taiwan)
 2018 Seoul Lo Media Canvas, Seoul                 
 
 ## footer
