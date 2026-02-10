@@ -489,7 +489,20 @@ export function MainPage({ artworks, animations, onArtworkClick, onTextClick }: 
             {mainContent.contact && (
               <div className="mt-6">
                 {mainContent.contact.split('\n').map((line, index) => (
-                  <p key={index}>{line}</p>
+                  <p key={index}>
+                    {line.startsWith('@') ? (
+                      <a
+                        href={`https://www.instagram.com/${line.slice(1)}/`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-100 transition-opacity"
+                      >
+                        {line}
+                      </a>
+                    ) : (
+                      line
+                    )}
+                  </p>
                 ))}
               </div>
             )}
