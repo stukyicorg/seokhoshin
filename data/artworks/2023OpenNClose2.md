@@ -5,39 +5,39 @@ year: 2023
 projectNumber: "열고닫기2"
 images:
 
-  - url: "/images/artworks/Open&Close2_1.jpeg"
+  - url: "/images/artworks/Open&Clopse2_1.jpeg"
     layout: "half"
     height: "short"
     
-  - url: "/images/artworks/Open&Close2_2.jpeg"
+  - url: "/images/artworks/Open&Clopse2_2.jpeg"
     layout: "half"
     height: "short"
     
-  - url: "/images/artworks/Open&Close2_3.jpeg"
+  - url: "/images/artworks/Open&Clopse2_3.jpeg"
     layout: "third"
     height: "square"
     
-  - url: "/images/artworks/Open&Close2_4.jpeg"
+  - url: "/images/artworks/Open&Clopse2_4.jpeg"
     layout: "third"
     height: "square"
     
-  - url: "/images/artworks/Open&Close2_5.jpeg"
+  - url: "/images/artworks/Open&Clopse2_5.jpeg"
     layout: "third"
     height: "square"
 
-  - url: "/images/artworks/Open&Close2_6.jpeg"
+  - url: "/images/artworks/Open&Clopse2_6.jpeg"
     layout: "third"
     height: "square"
 
-  - url: "/images/artworks/Open&Close2_7.jpeg"
+  - url: "/images/artworks/Open&Clopse2_7.jpeg"
     layout: "third"
     height: "square"   
 
-  - url: "/images/artworks/Open&Close2_8.jpeg"
+  - url: "/images/artworks/Open&Clopse2_8.jpeg"
     layout: "third"
     height: "square"
 
-  - url: "/images/artworks/Open&Close2_9.jpeg"
+  - url: "/images/artworks/Open&Clopse2_9.jpeg"
     layout: "full"
     height: "short"    
        
