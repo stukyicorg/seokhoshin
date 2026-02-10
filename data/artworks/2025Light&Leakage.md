@@ -7,11 +7,11 @@ images:
 
   - url: "/images/artworks/Leakage1.jpg"
     layout: "half"
-    height: "short"
+    height: "tall"
     
   - url: "/images/artworks/Leakage2.jpg"
     layout: "half"
-    height: "short"
+    height: "tall"
     
   - url: "/images/artworks/Leakage1-1.jpg"
     layout: "third"
