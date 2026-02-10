@@ -13,6 +13,38 @@ export interface TextContent {
   footer?: string;
 }
 
+// 마크다운 링크 [text](url)를 파싱하여 React 엘리먼트로 변환
+function renderLineWithLinks(line: string): React.ReactNode {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(line)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(line.slice(lastIndex, match.index));
+    }
+    parts.push(
+      <a
+        key={match.index}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline hover:opacity-70 transition-opacity"
+      >
+        {match[1]}
+      </a>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < line.length) {
+    parts.push(line.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : line;
+}
+
 export function TextPage({ onBack }: TextPageProps) {
   const [sections, setSections] = useState<TextSection[]>([]);
   const [loading, setLoading] = useState(true);
@@ -93,9 +125,9 @@ export function TextPage({ onBack }: TextPageProps) {
                         <React.Fragment key={lineIndex}>
                           {/* 이탤릭 처리 */}
                           {line.startsWith('*') && line.endsWith('*') ? (
-                            <em>{line.slice(1, -1)}</em>
+                            <em>{renderLineWithLinks(line.slice(1, -1))}</em>
                           ) : (
-                            line
+                            renderLineWithLinks(line)
                           )}
                           {lineIndex < paragraph.split('\n').length - 1 && <br />}
                         </React.Fragment>
@@ -108,7 +140,7 @@ export function TextPage({ onBack }: TextPageProps) {
               {/* 하단 푸터 텍스트 */}
               {section.footer && (
                 <div className="max-w-3xl mx-auto border-t border-black/20 pt-8 mt-8 text-left">
-                  <p className="text-sm opacity-60">{section.footer}</p>
+                  <p className="text-sm opacity-60">{renderLineWithLinks(section.footer)}</p>
                 </div>
               )}
             </div>
