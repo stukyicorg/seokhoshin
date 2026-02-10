@@ -1,7 +1,8 @@
 ---
-title: ""
-subtitle: ""
+title: " "
+subtitle: " "
 ---
+
 2026 한국예술종합학교 미술원 조형예술과 전문사 졸업
 2020 한국예술종합학교 영상원 애니메이션과 예술사 졸업                                
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2026, MFA of Video Art, Korea National University of Arts
@@ -49,8 +50,4 @@ subtitle: ""
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2020 ONE Country ONE Film International Festival - 11th edition, Issoire (France)
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ     Seoul Indie-AniFest, Seoul
  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ    KuanDu International Animation Festival, Kuandu(Taiwan)
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2018 Seoul Lo Media Canvas, Seoul           
- 
-
-
-
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2018 Seoul Lo Media Canvas, Seoul
