@@ -7,7 +7,7 @@ images:
 
   - url: "/images/artworks/tomato1.jpeg"
     layout: "half"
-    height: "squre"
+    height: "square"
     
   - url: "/images/artworks/tomato2.jpeg"
     layout: "half"
