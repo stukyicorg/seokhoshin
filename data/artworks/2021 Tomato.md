@@ -23,13 +23,9 @@ images:
     
   
 ---
-‣ ≪토마토≫
+‣ ≪토마토≫ 철, 유압실린더
 
-철, 유압실린더
-
-‣ ≪Tomato≫
-
-steel, hydraulic cylinder
+‣ ≪Tomato≫ steel, hydraulic cylinder
 
 
 ## detail
