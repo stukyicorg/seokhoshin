@@ -259,7 +259,7 @@ export function MainPage({ artworks, animations, onArtworkClick, onTextClick }: 
     <div className="min-h-screen p-8 relative">
       {/* 년도 네비게이션 - 왼쪽 상단 */}
       <div className="fixed top-8 left-8 z-10 md:block hidden">
-        <h1 className="mb-8 opacity-60">Seokho Shin</h1>
+        <h1 className="mb-8 opacity-60 font-normal">Seokho Shin</h1>
 
         {/* Works 탭 */}
         <button
@@ -352,7 +352,7 @@ export function MainPage({ artworks, animations, onArtworkClick, onTextClick }: 
             onClick={onTextClick}
             className="opacity-60 hover:opacity-100 transition-opacity text-left"
           >
-            <h3 className="mb-2">Text</h3>
+            <h3 className="mb-2">CV</h3>
           </button>
         </div>
 
@@ -360,7 +360,7 @@ export function MainPage({ artworks, animations, onArtworkClick, onTextClick }: 
 
       {/* 모바일 년도 네비게이션 */}
       <div className="md:hidden mb-8">
-        <h1 className="mb-4 opacity-60">Seokho Shin</h1>
+        <h1 className="mb-4 opacity-60 font-normal">Seokho Shin</h1>
 
         {/* 탭 선택 - 모바일 */}
         <div className="flex gap-4 mb-2">
@@ -464,7 +464,7 @@ export function MainPage({ artworks, animations, onArtworkClick, onTextClick }: 
             onClick={onTextClick}
             className="opacity-60 hover:opacity-100 transition-opacity text-left"
           >
-            <h3 className="mb-2">Text</h3>
+            <h3 className="mb-2">CV</h3>
           </button>
         </div>
       </div>
