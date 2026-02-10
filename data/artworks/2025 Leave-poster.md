@@ -50,6 +50,8 @@ images:
 
 ‣ 《Leave》 Fragments from a demolished house
 
+dimensions variable
+
 ## detail
 
  작년 말, 건축 일을 하는 아버지가 설계하여 지은 20년 된 집은 골조만 남기고 뜯겨 나갔다. 
