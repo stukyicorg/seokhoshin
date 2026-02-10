@@ -46,13 +46,9 @@ images:
 
 
 ---
-‣ 간다
+‣ 《간다》 철거된 집의 자재
 
-철거된 집의 자재
-
-‣ Leave
-
-Fragments from a demolished house
+‣ 《Leave》 Fragments from a demolished house
 
 ## detail
 
