@@ -20,10 +20,12 @@ images:
   
 ---
 ‣ ≪Open&Close1≫
-나무, 경첩, 철, 가변크기
+나무, 경첩, 철
 
 ‣ ≪Open&Close1≫
-wood, hinge, steel, dimensions variable 
+wood, hinge, steel
+
+dimensions variable 
 
 
 ## detail
