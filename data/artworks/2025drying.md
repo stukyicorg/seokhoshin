@@ -22,14 +22,10 @@ images:
     height: "tall"
 ---
 
-‣ ≪건조 중≫
-
-철거된 집의 꽃무늬 벽지, 철
+‣ ≪건조 중≫ 철거된 집의 꽃무늬 벽지, 철
 
 
-‣ ≪It's drying≫
-
-Floral wallpaper from a demolished house, steel
+‣ ≪It's drying≫ Floral wallpaper from a demolished house, steel
 
 127 x 46 x 70
 
