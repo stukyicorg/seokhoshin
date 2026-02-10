@@ -14,11 +14,11 @@ images:
     height: "short"
     
   - url: "/images/artworks/steelcollection3.jpeg"
-    layout: "third"
+    layout: "half"
     height: "square"
     
   - url: "/images/artworks/steelcollection4.jpeg"
-    layout: "third"
+    layout: "half"
     height: "square"
     
  
