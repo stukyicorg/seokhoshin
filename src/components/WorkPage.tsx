@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Artwork, ImageConfig } from '../App';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
@@ -249,27 +250,24 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
           {/* 작품 정보 박스 */}
           <div className="bg-yellow-200 p-4 rounded">
             <div className="text-sm leading-relaxed">
-              {artwork.description.split('\n\n').map((paragraph, index) => (
-                <p key={index} className={index > 0 ? "mt-3" : ""}>
-                  {paragraph}
-                </p>
-              ))}
+              <ReactMarkdown components={{
+                a: ({children, href}) => <a href={href} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">{children}</a>,
+                p: ({children}) => <p className="mt-3 first:mt-0">{children}</p>
+              }}>
+                {artwork.description}
+              </ReactMarkdown>
             </div>
           </div>
 
           {/* 상세 설명 */}
           {artwork.detailedDescription && (
             <div className="space-y-4 text-sm leading-relaxed">
-              {artwork.detailedDescription.split('\n\n').map((paragraph, index) => (
-                <p key={index}>
-                  {paragraph.split('\n').map((line, lineIndex) => (
-                    <React.Fragment key={lineIndex}>
-                      {line}
-                      {lineIndex < paragraph.split('\n').length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
-                </p>
-              ))}
+              <ReactMarkdown components={{
+                a: ({children, href}) => <a href={href} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">{children}</a>,
+                p: ({children}) => <p className="mt-4 first:mt-0">{children}</p>
+              }}>
+                {artwork.detailedDescription}
+              </ReactMarkdown>
             </div>
           )}
 
