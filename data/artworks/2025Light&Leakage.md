@@ -38,10 +38,11 @@ images:
     height: "square"
        
 ---
-‣ ≪천장등과 누수≫ 철거된 집의 꽃무늬 천장등과 전선커버, 전선
+‣ ≪천장등과 누수≫ 철거된 집의 자재
 
 
-‣ ≪Light & Leakage≫ steel, wood, hinge
+‣ ≪Light & Leakage≫ materials from a demolished house
+
 
 dimensions variable
 
