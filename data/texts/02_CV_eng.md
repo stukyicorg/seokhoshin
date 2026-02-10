@@ -17,7 +17,7 @@ Group Exhibition
  
 Selected Screenings
 2024·Jeonju International Film Festival, Jeonju
-·ㅤ·ㅤ·ㅤ·ㅤ·Animafest, Zagreb(Croatia)
+· · ·Animafest, Zagreb(Croatia)
 ·····Daegu Independent Short Film Festival, Daegu
 ·····Bucheon International Animation Festival, Bucheon
 ·····Korean Short Film Award, Seoul
