@@ -25,11 +25,11 @@ images:
     layout: "third"
     height: "square"
 
- - url: "/images/artworks/Open&Close2_6.jpeg"
+  - url: "/images/artworks/Open&Close2_6.jpeg"
     layout: "third"
     height: "square"
 
- - url: "/images/artworks/Open&Close2_7.jpeg"
+  - url: "/images/artworks/Open&Close2_7.jpeg"
     layout: "third"
     height: "square"   
 
@@ -42,16 +42,13 @@ images:
     height: "short"    
        
 ---
-‣ ≪20년≫
+‣ ≪열고닫기2≫
+철, 나무, 경첩
 
-철거된 집의 벽과 바닥 자재, 마루, 철, 퍼티
+‣ ≪Open&Close2≫
+steel, wood, hinge
 
-‣ ≪20years≫
-
-Wall and floor fragments from a demolished house,
-wooden flooring, steel, putty
-
-176 x 168 x 220
+dimensions variable
 
 ## detail
 
