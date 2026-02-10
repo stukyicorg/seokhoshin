@@ -4,7 +4,6 @@ title: "Open&Close2"
 year: 2023
 projectNumber: "열고닫기2"
 images:
-
   - url: "/images/artworks/Open&Close2_1.jpeg"
     layout: "half"
     height: "short"
