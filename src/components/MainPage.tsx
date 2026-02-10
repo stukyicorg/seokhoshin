@@ -6,21 +6,24 @@ import { loadMainContent, MainContent } from '../utils/mainContentLoader';
 
 interface MainPageProps {
   artworks: Artwork[];
+  animations: Artwork[];
   onArtworkClick: (artwork: Artwork) => void;
   onTextClick: () => void;
 }
 
-export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProps) {
+export function MainPage({ artworks, animations, onArtworkClick, onTextClick }: MainPageProps) {
+  const [selectedTab, setSelectedTab] = useState<'works' | 'animations'>('works');
+
   // 작품에서 년도 추출
   const years = [...new Set(artworks.map(artwork => artwork.year))].sort((a, b) => b - a);
-  
+
   // 랜덤한 년도로 초기화
   const getRandomYear = () => {
     if (years.length === 0) return 2024;
     const randomIndex = Math.floor(Math.random() * years.length);
     return years[randomIndex];
   };
-  
+
   const [selectedYear, setSelectedYear] = useState<number>(getRandomYear());
   const [currentArtworkIndex, setCurrentArtworkIndex] = useState<number>(0);
   const [mainContent, setMainContent] = useState<MainContent>({
@@ -37,11 +40,17 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
   const minSwipeDistance = 50;
   const swipeThreshold = 0.1; // 화면 너비의 50%
   
-  // 선택된 년도의 작품 필터링 및 projectNumber로 정렬
-  const filteredArtworks = artworks
-    .filter(artwork => artwork.year === selectedYear)
+  // 탭 전환 핸들러
+  const handleTabSwitch = (tab: 'works' | 'animations') => {
+    setSelectedTab(tab);
+    setCurrentArtworkIndex(0);
+  };
+
+  // 활성 탭에 따른 데이터셋 선택 및 정렬
+  const activeDataset = selectedTab === 'works' ? artworks : animations;
+  const filteredArtworks = [...activeDataset]
     .sort((a, b) => {
-      // projectNumber로 정렬 (숫자 부분만 추출하여 비교)
+      if (a.year !== b.year) return b.year - a.year;
       const aNum = parseInt(a.projectNumber.replace(/[^0-9]/g, '') || '0');
       const bNum = parseInt(b.projectNumber.replace(/[^0-9]/g, '') || '0');
       return aNum - bNum;
@@ -54,15 +63,12 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
     });
   }, []);
 
-  // 년도가 변경될 때 인덱스 리셋 및 안전성 확인
+  // currentArtworkIndex가 변경될 때 해당 작품의 년도로 selectedYear 자동 동기화 (Works 탭만)
   React.useEffect(() => {
-    setCurrentArtworkIndex(0);
-    setDragOffset(0);
-    setIsDragging(false);
-    setMouseStart(null);
-    setTouchStart(null);
-    setTouchEnd(null);
-  }, [selectedYear]);
+    if (selectedTab === 'works' && filteredArtworks[currentArtworkIndex]) {
+      setSelectedYear(filteredArtworks[currentArtworkIndex].year);
+    }
+  }, [currentArtworkIndex, selectedTab]);
 
   // currentArtworkIndex가 유효한 범위를 벗어나면 보정
   React.useEffect(() => {
@@ -254,54 +260,95 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
       {/* 년도 네비게이션 - 왼쪽 상단 */}
       <div className="fixed top-8 left-8 z-10 md:block hidden">
         <h1 className="mb-8 opacity-60">Seokho Shin</h1>
-        <h2 className="mb-2 opacity-60">Works</h2>
-        <div className="space-y-1">
-          {years.map((year, index) => {
-            const yearArtworks = artworks
-              .filter(artwork => artwork.year === year)
-              .sort((a, b) => {
-                // projectNumber로 정렬 (숫자 부분만 추출하여 비교)
-                const aNum = parseInt(a.projectNumber.replace(/[^0-9]/g, '') || '0');
-                const bNum = parseInt(b.projectNumber.replace(/[^0-9]/g, '') || '0');
-                return aNum - bNum;
-              });
-            return (
-              <div key={year} className="flex items-start">
-                <button
-                  onClick={() => setSelectedYear(year)}
-                  className={`text-left pl-4 transition-opacity hover:opacity-100 ${
-                    selectedYear === year ? 'opacity-100' : 'opacity-60'
-                  }`}
-                >
-                  {year}
-                </button>
-                
-                {/* 서브메뉴 - 항상 표시 */}
-                {selectedYear === year && yearArtworks.length > 0 && (
-                  <div className="ml-8 space-y-1">
-                    {yearArtworks.map((artwork, idx) => (
-                      <button
-                        key={artwork.id || idx}
-                        onClick={() => {
-                          setCurrentArtworkIndex(idx);
-                        }}
-                        className={`block text-left pl-4 text-sm transition-opacity hover:opacity-100 ${
-                          currentArtworkIndex === idx ? 'opacity-100' : 'opacity-60'
-                        }`}
-                      >
-                        {artwork.title}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+
+        {/* Works 탭 */}
+        <button
+          onClick={() => handleTabSwitch('works')}
+          className={`block mb-2 transition-opacity hover:opacity-100 text-left ${
+            selectedTab === 'works' ? 'opacity-100' : 'opacity-60'
+          }`}
+        >
+          <h2>Works</h2>
+        </button>
+        {selectedTab === 'works' && (
+          <div className="space-y-1">
+            {years.map((year) => {
+              const yearArtworks = artworks
+                .filter(artwork => artwork.year === year)
+                .sort((a, b) => {
+                  const aNum = parseInt(a.projectNumber.replace(/[^0-9]/g, '') || '0');
+                  const bNum = parseInt(b.projectNumber.replace(/[^0-9]/g, '') || '0');
+                  return aNum - bNum;
+                });
+              return (
+                <div key={year} className="flex items-start">
+                  <button
+                    onClick={() => {
+                      setSelectedYear(year);
+                      const idx = filteredArtworks.findIndex(a => a.year === year);
+                      if (idx >= 0) setCurrentArtworkIndex(idx);
+                    }}
+                    className={`text-left pl-4 transition-opacity hover:opacity-100 ${
+                      selectedYear === year ? 'opacity-100' : 'opacity-60'
+                    }`}
+                  >
+                    {year}
+                  </button>
+
+                  {selectedYear === year && yearArtworks.length > 0 && (
+                    <div className="ml-8 space-y-1">
+                      {yearArtworks.map((artwork, idx) => {
+                        const globalIdx = filteredArtworks.findIndex(a => a.id === artwork.id);
+                        return (
+                          <button
+                            key={artwork.id || idx}
+                            onClick={() => {
+                              setCurrentArtworkIndex(globalIdx >= 0 ? globalIdx : 0);
+                            }}
+                            className={`block text-left pl-4 text-sm transition-opacity hover:opacity-100 ${
+                              currentArtworkIndex === globalIdx ? 'opacity-100' : 'opacity-60'
+                            }`}
+                          >
+                            {artwork.title}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Animations 탭 */}
+        <button
+          onClick={() => handleTabSwitch('animations')}
+          className={`block mt-4 mb-2 transition-opacity hover:opacity-100 text-left ${
+            selectedTab === 'animations' ? 'opacity-100' : 'opacity-60'
+          }`}
+        >
+          <h2>Animations</h2>
+        </button>
+        {selectedTab === 'animations' && (
+          <div className="space-y-1 pl-4">
+            {filteredArtworks.map((artwork, idx) => (
+              <button
+                key={artwork.id || idx}
+                onClick={() => setCurrentArtworkIndex(idx)}
+                className={`block text-left text-sm transition-opacity hover:opacity-100 ${
+                  currentArtworkIndex === idx ? 'opacity-100' : 'opacity-60'
+                }`}
+              >
+                {artwork.title}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Text 그룹 */}
-        <div className="mt-8">
-          <button 
+        <div className="mt-4">
+          <button
             onClick={onTextClick}
             className="opacity-60 hover:opacity-100 transition-opacity text-left"
           >
@@ -314,67 +361,106 @@ export function MainPage({ artworks, onArtworkClick, onTextClick }: MainPageProp
       {/* 모바일 년도 네비게이션 */}
       <div className="md:hidden mb-8">
         <h1 className="mb-4 opacity-60">Seokho Shin</h1>
-        <h2 className="mb-2 opacity-60">Works</h2>
-        <div className="flex flex-wrap gap-4">
-          {years.map((year, index) => {
-            const yearArtworks = artworks
-              .filter(artwork => artwork.year === year)
-              .sort((a, b) => {
-                const aNum = parseInt(a.projectNumber.replace(/[^0-9]/g, '') || '0');
-                const bNum = parseInt(b.projectNumber.replace(/[^0-9]/g, '') || '0');
-                return aNum - bNum;
-              });
-            return (
-              <button
-                key={year}
-                onClick={() => setSelectedYear(year)}
-                className={`px-3 py-1 rounded transition-opacity hover:opacity-100 ${
-                  selectedYear === year ? 'opacity-100 bg-black text-white' : 'opacity-60'
-                }`}
-              >
-                {year}
-              </button>
-            );
-          })}
+
+        {/* 탭 선택 - 모바일 */}
+        <div className="flex gap-4 mb-2">
+          <button
+            onClick={() => handleTabSwitch('works')}
+            className={`transition-opacity hover:opacity-100 ${
+              selectedTab === 'works' ? 'opacity-100' : 'opacity-60'
+            }`}
+          >
+            <h2>Works</h2>
+          </button>
+          <button
+            onClick={() => handleTabSwitch('animations')}
+            className={`transition-opacity hover:opacity-100 ${
+              selectedTab === 'animations' ? 'opacity-100' : 'opacity-60'
+            }`}
+          >
+            <h2>Animations</h2>
+          </button>
         </div>
 
-        {/* 선택된 년도의 작품 목록 - 모바일 */}
-        {years.map((year) => {
-          const yearArtworks = artworks
-            .filter(artwork => artwork.year === year)
-            .sort((a, b) => {
-              const aNum = parseInt(a.projectNumber.replace(/[^0-9]/g, '') || '0');
-              const bNum = parseInt(b.projectNumber.replace(/[^0-9]/g, '') || '0');
-              return aNum - bNum;
-            });
-          
-          if (selectedYear === year && yearArtworks.length > 0) {
-            return (
-              <div key={`submenu-${year}`} className="mt-4 pl-4">
-                <div className="flex flex-wrap gap-x-3 gap-y-1">
-                  {yearArtworks.map((artwork, idx) => (
-                    <button
-                      key={artwork.id || idx}
-                      onClick={() => {
-                        setCurrentArtworkIndex(idx);
-                      }}
-                      className={`text-sm transition-opacity hover:opacity-100 ${
-                        currentArtworkIndex === idx ? 'opacity-100' : 'opacity-60'
-                      }`}
-                    >
-                      {artwork.title}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            );
-          }
-          return null;
-        })}
+        {/* Works 탭 콘텐츠 - 모바일 */}
+        {selectedTab === 'works' && (
+          <>
+            <div className="flex flex-wrap gap-4">
+              {years.map((year) => (
+                <button
+                  key={year}
+                  onClick={() => {
+                    setSelectedYear(year);
+                    const idx = filteredArtworks.findIndex(a => a.year === year);
+                    if (idx >= 0) setCurrentArtworkIndex(idx);
+                  }}
+                  className={`px-3 py-1 rounded transition-opacity hover:opacity-100 ${
+                    selectedYear === year ? 'opacity-100 bg-black text-white' : 'opacity-60'
+                  }`}
+                >
+                  {year}
+                </button>
+              ))}
+            </div>
+
+            {years.map((year) => {
+              const yearArtworks = artworks
+                .filter(artwork => artwork.year === year)
+                .sort((a, b) => {
+                  const aNum = parseInt(a.projectNumber.replace(/[^0-9]/g, '') || '0');
+                  const bNum = parseInt(b.projectNumber.replace(/[^0-9]/g, '') || '0');
+                  return aNum - bNum;
+                });
+
+              if (selectedYear === year && yearArtworks.length > 0) {
+                return (
+                  <div key={`submenu-${year}`} className="mt-4 pl-4">
+                    <div className="flex flex-wrap gap-x-3 gap-y-1">
+                      {yearArtworks.map((artwork, idx) => {
+                        const globalIdx = filteredArtworks.findIndex(a => a.id === artwork.id);
+                        return (
+                          <button
+                            key={artwork.id || idx}
+                            onClick={() => {
+                              setCurrentArtworkIndex(globalIdx >= 0 ? globalIdx : 0);
+                            }}
+                            className={`text-sm transition-opacity hover:opacity-100 ${
+                              currentArtworkIndex === globalIdx ? 'opacity-100' : 'opacity-60'
+                            }`}
+                          >
+                            {artwork.title}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </>
+        )}
+
+        {/* Animations 탭 콘텐츠 - 모바일 */}
+        {selectedTab === 'animations' && (
+          <div className="flex flex-wrap gap-x-3 gap-y-1 pl-4 mt-2">
+            {filteredArtworks.map((artwork, idx) => (
+              <button
+                key={artwork.id || idx}
+                onClick={() => setCurrentArtworkIndex(idx)}
+                className={`text-sm transition-opacity hover:opacity-100 ${
+                  currentArtworkIndex === idx ? 'opacity-100' : 'opacity-60'
+                }`}
+              >
+                {artwork.title}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Text 그룹 - 모바일 */}
         <div className="mt-6">
-          <button 
+          <button
             onClick={onTextClick}
             className="opacity-60 hover:opacity-100 transition-opacity text-left"
           >

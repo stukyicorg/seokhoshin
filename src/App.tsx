@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MainPage } from './components/MainPage';
 import { WorkPage } from './components/WorkPage';
 import { TextPage } from './components/TextPage';
-import { loadAllArtworks } from './utils/artworkLoader';
+import { loadAllArtworks, loadAllAnimations } from './utils/artworkLoader';
 
 export interface ImageConfig {
   url: string;
@@ -28,27 +28,34 @@ export default function App() {
   const [currentView, setCurrentView] = useState<'main' | 'work' | 'text'>('main');
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
   const [artworksData, setArtworksData] = useState<Artwork[]>([]);
+  const [animationsData, setAnimationsData] = useState<Artwork[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadArtworks = async () => {
+    const loadData = async () => {
       try {
-        const artworks = await loadAllArtworks();
+        const [artworks, animations] = await Promise.all([
+          loadAllArtworks(),
+          loadAllAnimations()
+        ]);
         setArtworksData(artworks);
+        setAnimationsData(animations);
       } catch (error) {
-        console.error('Failed to load artworks:', error);
+        console.error('Failed to load data:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    loadArtworks();
+    loadData();
   }, []);
 
   useEffect(() => {
+    const allData = [...artworksData, ...animationsData];
+
     const handlePopState = (event: PopStateEvent) => {
       if (event.state?.artworkId) {
-        const artwork = artworksData.find(a => a.id === event.state.artworkId);
+        const artwork = allData.find(a => a.id === event.state.artworkId);
         if (artwork) {
           setSelectedArtwork(artwork);
           setCurrentView('work');
@@ -64,7 +71,7 @@ export default function App() {
     const path = window.location.pathname;
     if (path.startsWith('/work/')) {
       const artworkId = path.replace('/work/', '');
-      const artwork = artworksData.find(a => a.id === artworkId);
+      const artwork = allData.find(a => a.id === artworkId);
       if (artwork) {
         setSelectedArtwork(artwork);
         setCurrentView('work');
@@ -74,7 +81,7 @@ export default function App() {
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
-  }, [artworksData]);
+  }, [artworksData, animationsData]);
 
   const navigateToWork = (artwork: Artwork) => {
     setSelectedArtwork(artwork);
@@ -104,8 +111,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-black">
       {currentView === 'main' ? (
-        <MainPage 
-          artworks={artworksData} 
+        <MainPage
+          artworks={artworksData}
+          animations={animationsData}
           onArtworkClick={navigateToWork}
           onTextClick={navigateToText}
         />
