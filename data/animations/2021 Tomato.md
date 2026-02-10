@@ -30,9 +30,8 @@ images:
 
 ‣ ≪Tomato≫ steel, hydraulic cylinder
 
-[Video](https://youtu.be/2eCdPPABehk?si=kPNicdACw1HeGqsU)
 
 ## detail
-
+[Video](https://youtu.be/2eCdPPABehk?si=kPNicdACw1HeGqsU)
 
 
