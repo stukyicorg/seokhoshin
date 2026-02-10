@@ -2,7 +2,7 @@
 id: "Open&Close2"
 title: "Open&Close2"
 year: 2023
-projectNumber: "열고닫기"
+projectNumber: "열고닫기2"
 images:
 
   - url: "/images/artworks/Open&Close2_1.jpeg"
@@ -37,7 +37,7 @@ images:
     layout: "third"
     height: "square"
 
- - url: "/images/artworks/Open&Close2_9.jpeg"
+  - url: "/images/artworks/Open&Close2_9.jpeg"
     layout: "full"
     height: "short"    
        
