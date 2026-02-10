@@ -2,9 +2,11 @@
 title: " "
 subtitle: " "
 ---
+신석호
 
 2026 한국예술종합학교 미술원 조형예술과 전문사 졸업
-2020 한국예술종합학교 영상원 애니메이션과 예술사 졸업                                
+2020 한국예술종합학교 영상원 애니메이션과 예술사 졸업       
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤSeokho Shin
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2026, MFA of Video Art, Korea National University of Arts
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2021, BFA of Animation, Korea National University of Arts
  
