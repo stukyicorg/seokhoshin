@@ -34,7 +34,7 @@ images:
 
 ‣ ≪뜬구름≫ 싱글채널 비디오, 사운드(6’00”)
 
-‣ ≪In The Clouds≫ sing-channel videio, sound(6’00”)
+‣ ≪In The Clouds≫ single-channel videio, sound(6’00”)
 
 
 ## detail
