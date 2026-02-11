@@ -7,11 +7,11 @@ images:
 
   - url: "/images/artworks/Floor1.JPG"
     layout: "half"
-    height: "tall"
+    height: "auto"
     
   - url: "/images/artworks/Floor2.JPG"
     layout: "half"
-    height: "tall"
+    height: "auto"
     
   - url: "/images/artworks/Floor3.JPG"
     layout: "half"
