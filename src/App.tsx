@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MainPage } from './components/MainPage';
 import { WorkPage } from './components/WorkPage';
 import { TextPage } from './components/TextPage';
-import { loadAllArtworks, loadAllAnimations } from './utils/artworkLoader';
+import { loadAllArtworks, loadAllAnimations, loadAllExhibitions } from './utils/artworkLoader';
 
 export interface ImageConfig {
   url: string;
@@ -29,17 +29,20 @@ export default function App() {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
   const [artworksData, setArtworksData] = useState<Artwork[]>([]);
   const [animationsData, setAnimationsData] = useState<Artwork[]>([]);
+  const [exhibitionsData, setExhibitionsData] = useState<Artwork[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [artworks, animations] = await Promise.all([
+        const [artworks, animations, exhibitions] = await Promise.all([
           loadAllArtworks(),
-          loadAllAnimations()
+          loadAllAnimations(),
+          loadAllExhibitions()
         ]);
         setArtworksData(artworks);
         setAnimationsData(animations);
+        setExhibitionsData(exhibitions);
       } catch (error) {
         console.error('Failed to load data:', error);
       } finally {
@@ -51,7 +54,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const allData = [...artworksData, ...animationsData];
+    const allData = [...artworksData, ...animationsData, ...exhibitionsData];
 
     const handlePopState = (event: PopStateEvent) => {
       if (event.state?.artworkId) {
@@ -81,7 +84,7 @@ export default function App() {
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
-  }, [artworksData, animationsData]);
+  }, [artworksData, animationsData, exhibitionsData]);
 
   const navigateToWork = (artwork: Artwork) => {
     setSelectedArtwork(artwork);
@@ -114,6 +117,7 @@ export default function App() {
         <MainPage
           artworks={artworksData}
           animations={animationsData}
+          exhibitions={exhibitionsData}
           onArtworkClick={navigateToWork}
           onTextClick={navigateToText}
         />

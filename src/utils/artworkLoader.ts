@@ -11,6 +11,11 @@ const animationModules = import.meta.glob('/data/animations/*.md', {
   import: 'default'
 });
 
+const exhibitionModules = import.meta.glob('/data/exhibitions/*.md', {
+  query: '?raw',
+  import: 'default'
+});
+
 export async function loadAllArtworks(): Promise<Artwork[]> {
   const artworks: Artwork[] = [];
   
@@ -45,4 +50,22 @@ export async function loadAllAnimations(): Promise<Artwork[]> {
   animations.sort((a, b) => b.year - a.year || a.id.localeCompare(b.id));
 
   return animations;
+}
+
+export async function loadAllExhibitions(): Promise<Artwork[]> {
+  const exhibitions: Artwork[] = [];
+
+  for (const path in exhibitionModules) {
+    try {
+      const module = await exhibitionModules[path]() as string;
+      const exhibition = parseArtworkMD(module);
+      exhibitions.push(exhibition);
+    } catch (error) {
+      console.error(`Failed to load exhibition from ${path}:`, error);
+    }
+  }
+
+  exhibitions.sort((a, b) => b.year - a.year || a.id.localeCompare(b.id));
+
+  return exhibitions;
 }
