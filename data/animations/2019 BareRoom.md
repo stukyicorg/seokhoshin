@@ -9,7 +9,7 @@ images:
     layout: "full"
     height: "auto"
    
-  - url: "/images/artworks/bareroom3.png"
+  - url: "/images/artworks/bareroom3.jpg"
     layout: "full"
     height: "auto"
     
