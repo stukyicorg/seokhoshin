@@ -452,6 +452,12 @@ export function MainPage({ artworks, animations, exhibitions, onArtworkClick, on
           >
             <h2>Animations</h2>
           </button>
+          <button
+            onClick={onTextClick}
+            className="opacity-60 hover:opacity-100 transition-opacity"
+          >
+            <h2>CV</h2>
+          </button>
         </div>
 
         {/* Works 탭 콘텐츠 - 모바일 */}
@@ -589,15 +595,6 @@ export function MainPage({ artworks, animations, exhibitions, onArtworkClick, on
           </div>
         )}
 
-        {/* Text 그룹 - 모바일 */}
-        <div className="mt-6">
-          <button
-            onClick={onTextClick}
-            className="opacity-60 hover:opacity-100 transition-opacity text-left"
-          >
-            <h3 className="mb-2">CV</h3>
-          </button>
-        </div>
       </div>
 
       {/* 작품 표시 - 오른쪽 */}
