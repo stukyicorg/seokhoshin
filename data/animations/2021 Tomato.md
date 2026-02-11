@@ -1,37 +1,32 @@
 ---
-id: "Tomato"
-title: "Tomato"
+id: "A Current"
+title: "A Current"
 year: 2021
-projectNumber: "토마토"
+projectNumber: "수류"
 images:
 
-  - url: "/images/artworks/tomato1.jpeg"
-    layout: "half"
-    height: "square"
+  - url: "/images/artworks/Current1.jpeg"
+    layout: "full"
+    height: "short"
     
-  - url: "/images/artworks/tomato2.jpeg"
-    layout: "half"
-    height: "square"
+  - url: "/images/artworks/Current2.jpeg"
+    layout: "full"
+    height: "short"
     
-  - url: "/images/artworks/tomato3.jpeg"
-    layout: "half"
-    height: "square"
+  - url: "/images/artworks/Current3.jpeg"
+    layout: "full"
+    height: "short"
     
-  - url: "/images/artworks/tomato4.jpeg"
-    layout: "half"
-    height: "square"
-    
-  
 ---
 
 **타이틀**
 
-‣ ≪토마토≫ 철, 유압실린더
+‣ ≪수류≫ 싱글채널 비디오, 사운드(8’15”)
 
-‣ ≪Tomato≫ steel, hydraulic cylinder
+‣ ≪Tomato≫ sing-channel videio, sound(8’15”)
 
 
 ## detail
-[Video](https://youtu.be/2eCdPPABehk?si=kPNicdACw1HeGqsU)
+[Video](https://youtu.be/W9oQaVRxWAY?si=tt73wbhBi4ADMqcU)
 
 
