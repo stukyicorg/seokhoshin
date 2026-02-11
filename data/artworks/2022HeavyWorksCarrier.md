@@ -36,5 +36,4 @@ single-channel video
 
 ## detail
 
-Video
-: https://youtu.be/TdC0xjmBLyw
+[Video](https://youtu.be/TdC0xjmBLyw)
