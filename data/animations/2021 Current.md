@@ -27,7 +27,7 @@ images:
 
 ‣ ≪수류≫ 싱글채널 비디오, 사운드(8’15”)
 
-‣ ≪Tomato≫ sing-channel videio, sound(8’15”)
+‣ ≪Tomato≫ single-channel videio, sound(8’15”)
 
 
 ## detail
