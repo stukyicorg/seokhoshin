@@ -14,7 +14,7 @@ images:
   - url: "/images/artworks/FacingMirrors2-1.png"
     layout: "half"
     height: "square"
-  - url: "/images/artworks/FacingMirrors1.jpeg"
+  - url: "/images/artworks/FacingMirrors3.jpeg"
     layout: "full"
     height: "square"
         
