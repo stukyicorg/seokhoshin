@@ -5,15 +5,19 @@ year: 2021
 projectNumber: "수류"
 images:
 
-  - url: "/images/artworks/Current1.jpeg"
+  - url: "/images/artworks/Current0.jpg"
+    layout: "full"
+    height: "auto"
+   
+  - url: "/images/artworks/Current1.png"
     layout: "full"
     height: "short"
     
-  - url: "/images/artworks/Current2.jpeg"
+  - url: "/images/artworks/Current2.png"
     layout: "full"
     height: "short"
     
-  - url: "/images/artworks/Current3.jpeg"
+  - url: "/images/artworks/Current3.png"
     layout: "full"
     height: "short"
     
