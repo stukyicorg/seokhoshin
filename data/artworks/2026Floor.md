@@ -7,39 +7,39 @@ images:
 
   - url: "/images/artworks/Floor1.JPG"
     layout: "half"
-    height: "short"
+    height: "tall"
     
   - url: "/images/artworks/Floor2.JPG"
     layout: "half"
-    height: "short"
+    height: "tall"
     
   - url: "/images/artworks/Floor3.JPG"
-    layout: "third"
+    layout: "half"
     height: "square"
     
   - url: "/images/artworks/Floor4.JPG"
-    layout: "third"
+    layout: "half"
     height: "square"
     
   - url: "/images/artworks/Floor5.JPG"
-    layout: "third"
-    height: "square"
+    layout: "full"
+    height: "short"
 
   - url: "/images/artworks/Floor6.JPG"
-    layout: "third"
+    layout: "half"
     height: "square"
 
   - url: "/images/artworks/Floor7.JPG"
-    layout: "third"
+    layout: "half"
     height: "square"   
 
   - url: "/images/artworks/Floor8.JPG"
-    layout: "third"
+    layout: "half"
     height: "square"
 
   - url: "/images/artworks/Floor9.JPG"
-    layout: "full"
-    height: "short"    
+    layout: "half"
+    height: "square"    
        
 ---
 ‣ ≪바닥≫ 철, 나무, 경첩
