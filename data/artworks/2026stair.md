@@ -1,14 +1,10 @@
 ---
-id: "Ceiling"
-title: "Ceiling"
+id: "Stair"
+title: "Stair"
 year: 2026
-projectNumber: "천장"
+projectNumber: "계단"
 images:
 
-  - url: "/images/artworks/ceiling1.JPG"
-    layout: "full"
-    height: "auto"
-    
   - url: "/images/artworks/stair1.JPG"
     layout: "full"
     height: "auto"
