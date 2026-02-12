@@ -13,6 +13,10 @@ images:
     layout: "full"
     height: "auto"
     
+  - url: "/images/artworks/ceiling3.JPG"
+    layout: "full"
+    height: "auto"
+    
   - url: "/images/artworks/ceiling4.JPG"
     layout: "half"
     height: "square"
