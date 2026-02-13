@@ -120,38 +120,43 @@ images:
 
 RoomooR
 
-January 30 (Fri) – February 13 (Fri), 2026
-
 ㅤ
 
+January 30 (Fri) – February 13 (Fri), 2026
+
 Mon–Thu 13:00–20:00
+
 Fri–Sun 11:00–20:00 *Open daily
 
 ㅤ
 
 Faction
+
 B1, 26 Hongjecheon-ro 6-gil, Seodaemun-gu, Seoul
 
 ㅤ
 
 Opening Performance
+
 January 30 (Fri), 19:30
+
 *The space will be open from 15:00 on the opening day.
+
 *The artist will continue to change the form of the work throughout the exhibition.
 
 ㅤ
 
 Artist: Seokho Shin @stukyic
+
 Curated by Sohyun Kim @skimmmkim 
+
 Graphic Design: Macadamia Oh @macadamiaoh
+
 Installation: Jaeyeon Park @_jaeyeon_park_
+
 Supported by: Faction
 
 ㅤ
-
-[Performance Video](https://youtu.be/MGH-XM3hTd8?si=Y_AFLmV8im5fzebD)
-
-## detail
 
 《RoomooR》에서 신석호의 룸(room)'은 벽과 바닥, 천장이 서로를 밀었다가 당기고 버티고 지지하며 움직이는 하나의 코레오그래피를 이룬다. 철제 골조는 작가의 몸과 흥미롭게 연결되어 접히고 펼쳐질 수 있는 동시에 움직임의 방향과 범위를 정하는 장치로 작동한다. 이러한 구조체는 다음 움직임이 개입되기 전까지 유지되는 잠정적 상태에 가깝다. 작가는 여러 모습으로 변신하는 구조를 넘나들며 무거움과 가벼움, 날카로움과 부드러움, 높이와 낮음을 온몸으로 감각한다. 자처럼 공간을 재고, 추처럼 균형을 가늠하며, 들어 올릴 수 있는 무게와 지나갈 수 있는 틈, 만질 수 있는 표면과 견딜 수 있는 강도를 시험한다. 이어지는 시험과 판단 속에서 '룸'은 몸의 개입으로 잠시 성립되고 허물어지기를 반복한다.
 
@@ -162,6 +167,10 @@ In RoomooR, Seokho Shin conceives the room as a single choreography, in which wa
 The work unfolds through bodily engagement. As the artist moves the structure, sensations of weight and lightness, rigidity and flexibility, height and ground are felt directly through the body. Through this continuous process, the room never resolves into a fixed architectural form, but shifts, folds, and opens again through ongoing movement.
 
 ㅤ
+
+[Performance Video](https://youtu.be/MGH-XM3hTd8?si=Y_AFLmV8im5fzebD)
+
+## detail
 
 《RoomooR》에서 신석호의 룸(room)은 벽과 바닥, 천장이 서로를 밀었다가 당기고 버티고
 지지하며 움직이는 하나의 코레오그래피를 이룬다. 룸은 신석호가 만든 구조물에 의해 공고한
