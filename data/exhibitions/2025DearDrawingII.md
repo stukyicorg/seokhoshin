@@ -5,11 +5,11 @@ year: 2025
 projectNumber: "디어드로잉II"
 images:
 
-  - url: "/images/artworks/DearDrawing_poster1.jpg"
+  - url: "/images/artworks/DearDrawing_poster1.JPG"
     layout: "half"
     height: "auto"
 
-  - url: "/images/artworks/DearDrawing_poster2.jpg"
+  - url: "/images/artworks/DearDrawing_poster2.JPG"
     layout: "half"
     height: "auto"
 
