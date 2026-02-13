@@ -41,43 +41,43 @@ images:
     layout: "third"
     height: "square"
 
- - url: "/images/artworks/RoomooR5.JPG"
+  - url: "/images/artworks/RoomooR5.JPG"
     layout: "full"
     height: "auto"
 
- - url: "/images/artworks/RoomooR6.JPG"
+  - url: "/images/artworks/RoomooR6.JPG"
     layout: "half"
     height: "square"
 
- - url: "/images/artworks/RoomooR7.JPG"
+  - url: "/images/artworks/RoomooR7.JPG"
     layout: "half"
     height: "square"
 
- - url: "/images/artworks/RoomooR8.JPG"
+  - url: "/images/artworks/RoomooR8.JPG"
     layout: "full"
     height: "auto"
 
- - url: "/images/artworks/RoomooR9.JPG"
+  - url: "/images/artworks/RoomooR9.JPG"
     layout: "full"
     height: "auto"
 
- - url: "/images/artworks/RoomooR10.JPG"
+  - url: "/images/artworks/RoomooR10.JPG"
     layout: "full"
     height: "auto"
 
- - url: "/images/artworks/RoomooR11.JPG"
+  - url: "/images/artworks/RoomooR11.JPG"
     layout: "full"
     height: "auto"
 
- - url: "/images/artworks/RoomooR12.JPG"
+  - url: "/images/artworks/RoomooR12.JPG"
     layout: "full"
     height: "auto"
 
- - url: "/images/artworks/RoomooR13.JPG"
+  - url: "/images/artworks/RoomooR13.JPG"
     layout: "full"
     height: "auto"
 
- - url: "/images/artworks/roomoor_a5_image.jpg"
+  - url: "/images/artworks/roomoor_a5_image.jpg"
     layout: "full"
     height: "auto"
 
