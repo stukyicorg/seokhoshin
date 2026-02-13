@@ -1,6 +1,6 @@
 ---
-id: "Stair"
-title: "Stair"
+id: "Stairs"
+title: "Stairs"
 year: 2026
 projectNumber: "계단"
 images:
@@ -28,7 +28,7 @@ images:
 ---
 ‣ ≪계단≫ 철, 나무
 
-‣ ≪Stair≫ steel, wood
+‣ ≪Stairs≫ steel, wood
 
 83 x 60 x 86
 
