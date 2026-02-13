@@ -5,6 +5,14 @@ year: 2025
 projectNumber: "디어드로잉II"
 images:
 
+  - url: "/images/artworks/DearDrawing_poster1.jpg"
+    layout: "half"
+    height: "auto"
+
+  - url: "/images/artworks/DearDrawing_poster2.jpg"
+    layout: "half"
+    height: "auto"
+
   - url: "/images/artworks/DearDrawing1.jpg"
     layout: "full"
     height: "auto"
@@ -58,6 +66,7 @@ images:
 
 박형지, 배종헌, 보이첵 길레윅, 사샤 폴레, 신석호, 홍이현숙 
 
+ㅤ
 
 2025년 7월 21일 (월) - 8월 10일 (일) 
 
@@ -67,10 +76,14 @@ images:
 
 프로젝트 공간 낫씽이즈리얼. 서울시 종로구 혜화로 9길 7, 3층
 
+ㅤ
+ㅤ
 
 Dear Drawing II: TRACE, FOLLOW, LIFT, and PLOP!
 
 Jongheon Bae, Wojciech Gilewicz, Hong Lee Hyunsook, Hyungji Park, Sascha Pohle, Seokho Shin
+
+ㅤ
 
 2025.07.21.- 08.10.
 
@@ -102,6 +115,7 @@ nothingisreal.ps@gmail.com  Tel: 0507-1485-4525 @nothingisreal_nothingisreal
 
 글. 이소영
 
+ㅤ
 
 “What kind of drawing are you making? What does drawing mean to you?”
 
