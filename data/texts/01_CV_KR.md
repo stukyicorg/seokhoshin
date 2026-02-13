@@ -3,16 +3,19 @@ title: " "
 subtitle: "CV"
 ---
 2026 한국예술종합학교 미술원 조형예술과 전문사 졸업
-2020 한국예술종합학교 영상원 애니메이션과 예술사 졸업       
+2020 한국예술종합학교 영상원 애니메이션과 예술사 졸업    
+
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2026, MFA of Video Art, Korea National University of Arts
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2020, BFA of Animation, Korea National University of Arts
  
 개인전 
 2026 ≪룸몰≫, 팩션
 2025 ≪간다≫, 러브유어디포-언더디포
+
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤSolo Exhibition
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2026 ≪RoomooR≫, Faction
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2025 ≪Leave≫, Your Depot-Underdepot
+
 단체전
 2025 ≪디어 드로잉 II≫, 낫씽이즈리얼
 2023 ≪얕은 물 깊은 물고기≫, 모티포룸
@@ -25,7 +28,6 @@ subtitle: "CV"
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2022 ≪NYAM≫, gcartgallery
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2018 ≪Water House≫, Petersonhouse
 
- 
 스크리닝
 2024 전주국제영화제, 전주
 ㅤㅤㅤㅤAnimafest, 자그레브(크로아티아)
@@ -38,6 +40,7 @@ subtitle: "CV"
 ㅤㅤㅤㅤ인디애니페스트, 서울
 ㅤㅤㅤㅤ콴두 국제 애니메이션 페스티벌, 콴두(대만)
 2018 서울로 미디어 캔버스, 서울                 
+
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤSelected Screenings
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ2024 Jeonju International Film Festival, Jeonju
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤAnimafest, Zagreb(Croatia)
