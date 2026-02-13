@@ -83,49 +83,79 @@ images:
 
 ---
 룸몰 RoomooR
+
 2026.1.30.(금) – 2.13.(금)
+
 월-목 13:00–20:00 
+
 금-일 11:00-20:00 *휴관일 없음
+
 
 팩션 (서울 서대문구 홍제천로6길 26 지하1층)
 
+
 *오프닝 퍼포먼스 일정: 1.30.(금) 19:30
+
 *오프닝 당일 공간은 15:00부터 열려 있습니다. 
+
 *전시 기간 중 작가는 수시로 작품의 모습을 바꿉니다. 
 
+
 작가: 신석호 @stukyic
+
 기획 및 서문: 김소현 @skimmmkim 
+
 그래픽 디자인: 마카다미아 오 @macadamiaoh
+
 설치: 박재연 @_jaeyeon_park_
+
 협력: 팩션
 
 ㅤ
 
 Faction
+
 B1, 26 Hongjecheon-ro 6-gil, Seodaemun-gu, Seoul
 
 Opening Performance
+
 January 30 (Fri), 19:30
+
 *The space will be open from 15:00 on the opening day.
+
 *The artist will continue to change the form of the work throughout the exhibition.
 
+
 Artist: Seokho Shin @stukyic
+
 Curated by Sohyun Kim @skimmmkim 
+
 Graphic Design: Macadamia Oh @macadamiaoh
+
 Installation: Jaeyeon Park @_jaeyeon_park_
+
 Supported by: Faction
 
 ㅤ
+
 Opening Performance
+
 January 30 (Fri), 19:30
+
 *The space will be open from 15:00 on the opening day.
+
 *The artist will continue to change the form of the work throughout the exhibition.
+
 ㅤ
 
 Artist: Seokho Shin @stukyic
+
 Curated by Sohyun Kim @skimmmkim 
+
 Graphic Design: Macadamia Oh @macadamiaoh
+
 Installation: Jaeyeon Park @_jaeyeon_park_
+
 Supported by: Faction
 
 ㅤ
