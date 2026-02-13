@@ -46,11 +46,14 @@ images:
 
 
 ---
-‣ 《간다》 철거된 집의 자재
+《간다》
+Leave
 
-‣ 《Leave》 Fragments from a demolished house
+기간: 		2025. 5. 4. – 5. 12.
 
-dimensions variable
+장소:		러브유어디포_강남파빌리온 Love Your Depot_Gangnam Pavilion
+
+운영시간: 	매일 | 10:00 – 22:30
 
 ## detail
 
