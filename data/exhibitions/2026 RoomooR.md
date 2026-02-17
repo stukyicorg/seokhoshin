@@ -164,7 +164,7 @@ The work unfolds through bodily engagement. As the artist moves the structure, s
 
 ㅤ
 
-[Performance Video](https://youtu.be/MGH-XM3hTd8?si=Y_AFLmV8im5fzebD)
+[Performance Video](https://youtu.be/SE1zM_VdvSU?si=4c0Z77zCNPyCOlrd)
 
 ## detail
 
