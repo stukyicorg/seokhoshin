@@ -1,4 +1,4 @@
-import { Artwork, ImageConfig } from '../App';
+import { Artwork, ImageConfig, MediaItem } from '../App';
 
 interface ArtworkMatter {
   id: string;
@@ -7,7 +7,7 @@ interface ArtworkMatter {
   materials: string;
   dimensions: string;
   projectNumber: string;
-  images: (string | ImageConfig)[];
+  images: MediaItem[];
 }
 
 // MD 파일의 frontmatter와 content를 파싱하는 함수
@@ -87,6 +87,21 @@ function parseFrontmatter(frontmatter: string): ArtworkMatter {
             }
             result[currentKey].push(imageConfig);
             i = j - 1; // 처리한 줄만큼 건너뛰기
+          } else if (imageStr.startsWith('youtube:')) {
+            // 유튜브 영상 항목 - youtube(URL 또는 ID)와 layout 파싱
+            const ytConfig: any = {};
+            ytConfig.youtube = imageStr.replace('youtube:', '').trim().replace(/['"]/g, '');
+
+            let j = i + 1;
+            while (j < lines.length && lines[j].startsWith('    ')) {
+              const ytLine = lines[j].trim();
+              if (ytLine.startsWith('layout:')) {
+                ytConfig.layout = ytLine.replace('layout:', '').trim().replace(/['"]/g, '');
+              }
+              j++;
+            }
+            result[currentKey].push(ytConfig);
+            i = j - 1;
           } else {
             // 단순 문자열 형태
             result[currentKey].push(imageStr.replace(/['"]/g, ''));

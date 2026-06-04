@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { loadAllTextSections, TextSection } from '../utils/textLoader';
+import { YouTubeEmbed, matchWholeYouTube } from './YouTubeEmbed';
 
 interface TextPageProps {
   onBack: () => void;
@@ -119,21 +120,28 @@ export function TextPage({ onBack }: TextPageProps) {
               {/* 단일 컬럼 가운데 배치, 왼쪽 정렬 */}
               <div className="max-w-3xl mx-auto mb-16 text-left">
                 <div className="text-sm leading-relaxed">
-                  {section.content.split('\n\n').map((paragraph, pIndex) => (
-                    <p key={pIndex} className={pIndex > 0 ? "mt-4" : ""}>
-                      {paragraph.split('\n').map((line, lineIndex) => (
-                        <React.Fragment key={lineIndex}>
-                          {/* 이탤릭 처리 */}
-                          {line.startsWith('*') && line.endsWith('*') ? (
-                            <em>{renderLineWithLinks(line.slice(1, -1))}</em>
-                          ) : (
-                            renderLineWithLinks(line)
-                          )}
-                          {lineIndex < paragraph.split('\n').length - 1 && <br />}
-                        </React.Fragment>
-                      ))}
-                    </p>
-                  ))}
+                  {section.content.split('\n\n').map((paragraph, pIndex) => {
+                    // 문단 전체가 유튜브 단축문법이면 영상으로 렌더링
+                    const ytSpec = matchWholeYouTube(paragraph);
+                    if (ytSpec) {
+                      return <YouTubeEmbed key={pIndex} {...ytSpec} className={pIndex > 0 ? "mt-4" : ""} />;
+                    }
+                    return (
+                      <p key={pIndex} className={pIndex > 0 ? "mt-4" : ""}>
+                        {paragraph.split('\n').map((line, lineIndex) => (
+                          <React.Fragment key={lineIndex}>
+                            {/* 이탤릭 처리 */}
+                            {line.startsWith('*') && line.endsWith('*') ? (
+                              <em>{renderLineWithLinks(line.slice(1, -1))}</em>
+                            ) : (
+                              renderLineWithLinks(line)
+                            )}
+                            {lineIndex < paragraph.split('\n').length - 1 && <br />}
+                          </React.Fragment>
+                        ))}
+                      </p>
+                    );
+                  })}
                 </div>
               </div>
 

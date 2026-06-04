@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Artwork } from '../App';
+import { Artwork, MediaItem } from '../App';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { loadMainContent, MainContent } from '../utils/mainContentLoader';
+import { YouTubeEmbed, matchWholeYouTube } from './YouTubeEmbed';
+
+// 작품 썸네일용 첫 이미지 URL (유튜브 영상 항목은 건너뜀)
+function getFirstImageUrl(images: MediaItem[]): string | null {
+  for (const item of images) {
+    if (typeof item === 'string') return item;
+    if ('url' in item) return item.url;
+  }
+  return null;
+}
 
 interface MainPageProps {
   artworks: Artwork[];
@@ -603,16 +613,23 @@ export function MainPage({ artworks, animations, exhibitions, onArtworkClick, on
           {/* 정보 섹션 */}
           <div className="mb-16 space-y-2 text-sm opacity-60 text-left">
             <div>
-              {mainContent.description.split('\n\n').map((paragraph, index) => (
-                <p key={index} className={index > 0 ? "mt-4" : ""}>
-                  {paragraph.split('\n').map((line, lineIndex) => (
-                    <React.Fragment key={lineIndex}>
-                      {line}
-                      {lineIndex < paragraph.split('\n').length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
-                </p>
-              ))}
+              {mainContent.description.split('\n\n').map((paragraph, index) => {
+                // 문단 전체가 유튜브 단축문법이면 영상으로 렌더링
+                const ytSpec = matchWholeYouTube(paragraph);
+                if (ytSpec) {
+                  return <YouTubeEmbed key={index} {...ytSpec} className={index > 0 ? "mt-4" : ""} />;
+                }
+                return (
+                  <p key={index} className={index > 0 ? "mt-4" : ""}>
+                    {paragraph.split('\n').map((line, lineIndex) => (
+                      <React.Fragment key={lineIndex}>
+                        {line}
+                        {lineIndex < paragraph.split('\n').length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
+                  </p>
+                );
+              })}
             </div>
             {mainContent.contact && (
               <div className="mt-6">
@@ -659,11 +676,9 @@ export function MainPage({ artworks, animations, exhibitions, onArtworkClick, on
                 >
                   {filteredArtworks.map((artwork, index) => (
                     <div key={artwork.id || index} className="w-full h-full flex-shrink-0">
-                      {artwork.images && artwork.images.length > 0 ? (
+                      {getFirstImageUrl(artwork.images || []) ? (
                         <ImageWithFallback
-                          src={typeof artwork.images[0] === 'string' 
-                            ? artwork.images[0] 
-                            : artwork.images[0].url}
+                          src={getFirstImageUrl(artwork.images)!}
                           alt={artwork.title}
                           className="w-full h-full object-cover select-none"
                           draggable={false}

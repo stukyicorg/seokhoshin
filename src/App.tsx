@@ -10,6 +10,13 @@ export interface ImageConfig {
   height?: 'auto' | 'tall' | 'short' | 'square';
 }
 
+export interface YouTubeConfig {
+  youtube: string;
+  layout?: 'full' | 'half' | 'third' | 'quarter';
+}
+
+export type MediaItem = string | ImageConfig | YouTubeConfig;
+
 export interface Artwork {
   id: string;
   title: string;
@@ -18,7 +25,7 @@ export interface Artwork {
   dimensions: string;
   description: string;
   detailedDescription?: string;
-  images: (string | ImageConfig)[];
+  images: MediaItem[];
   projectNumber: string;
 }
 

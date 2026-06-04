@@ -4,6 +4,9 @@ title: "HeavyWorksCarrier"
 year: 2022
 projectNumber: "무거운작업나르기"
 images:
+  - youtube: "https://youtu.be/TdC0xjmBLyw"
+    layout: "full"
+    
   - url: "/images/artworks/HeavyWorksCarrier1.png"
     layout: "full"
     height: "short"
@@ -21,7 +24,7 @@ images:
     height: "short"
 
 
-  
+
 ---
 
 ‣ ≪무거운 작업 나르기≫

@@ -4,6 +4,8 @@ title: "Tomato"
 year: 2021
 projectNumber: "토마토"
 images:
+  - youtube: "https://youtu.be/2eCdPPABehk?si=kPNicdACw1HeGqsU"
+    layout: "full"
 
   - url: "/images/artworks/tomato1.jpeg"
     layout: "half"
@@ -20,8 +22,9 @@ images:
   - url: "/images/artworks/tomato4.jpeg"
     layout: "half"
     height: "square"
-    
-  
+
+
+
 ---
 ‣ ≪토마토≫ 철, 유압실린더
 

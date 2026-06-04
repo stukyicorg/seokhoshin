@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Artwork, ImageConfig } from '../App';
+import { Artwork, ImageConfig, MediaItem, YouTubeConfig } from '../App';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { YouTubeEmbed, extractYouTubeId, splitYouTubeSegments } from './YouTubeEmbed';
+
+// 갤러리 항목이 유튜브 영상인지 판별
+function isYouTube(item: MediaItem): item is YouTubeConfig {
+  return typeof item === 'object' && item !== null && 'youtube' in item;
+}
 
 interface WorkPageProps {
   artwork: Artwork;
@@ -22,6 +28,9 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
   });
   const [isAnimating, setIsAnimating] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
+
+  // 모달(확대 보기)은 이미지에만 적용 — 유튜브 항목은 제외한 목록
+  const imageItems = artwork.images.filter((item) => !isYouTube(item)) as (string | ImageConfig)[];
 
   const openModal = (index: number, event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -58,9 +67,9 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
 
   const navigateImage = (direction: 'prev' | 'next') => {
     if (direction === 'prev') {
-      setModalImageIndex((prev) => (prev > 0 ? prev - 1 : artwork.images.length - 1));
+      setModalImageIndex((prev) => (prev > 0 ? prev - 1 : imageItems.length - 1));
     } else {
-      setModalImageIndex((prev) => (prev < artwork.images.length - 1 ? prev + 1 : 0));
+      setModalImageIndex((prev) => (prev < imageItems.length - 1 ? prev + 1 : 0));
     }
   };
 
@@ -82,7 +91,7 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [isModalOpen, artwork.images.length]);
+  }, [isModalOpen, imageItems.length]);
 
   // 이미지 정보 추출 헬퍼 함수
   const getImageInfo = (image: string | ImageConfig) => {
@@ -117,97 +126,102 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
     }
   };
 
-  // 이미지를 레이아웃 그룹으로 정리
+  // 이미지/영상을 레이아웃 그룹으로 정리
   const renderImages = () => {
-    const imageElements: JSX.Element[] = [];
+    const elements: JSX.Element[] = [];
     let currentRow: JSX.Element[] = [];
     let currentRowLayout: string[] = [];
+    let modalIndex = 0; // imageItems 기준 인덱스 (모달용)
 
-    artwork.images.forEach((image, index) => {
-      const info = getImageInfo(image);
-
-      // full 레이아웃은 항상 새 행에
-      if (info.layout === 'full') {
-        // 이전 행이 있으면 먼저 렌더링
-        if (currentRow.length > 0) {
-          const gridCols = getGridColumns(currentRowLayout);
-          imageElements.push(
-            <div key={`row-${imageElements.length}`} className={`grid ${gridCols} gap-4 mb-4`}>
-              {currentRow}
-            </div>
-          );
-          currentRow = [];
-          currentRowLayout = [];
-        }
-        
-        // full 이미지 추가
-        imageElements.push(
-          <div 
-            key={index}
-            className="cursor-pointer transition-transform hover:scale-[1.02] mb-4"
-            onClick={(e) => openModal(index, e)}
-            data-image-index={index}
-          >
-            <div className={`${getHeightClass(info.height)} ${info.height === 'auto' ? '' : 'overflow-hidden'}`}>
-              <ImageWithFallback
-                src={info.url}
-                alt={`${artwork.title} - Image ${index + 1}`}
-                className={`w-full ${info.height === 'auto' ? 'h-auto' : 'h-full'} object-cover rounded`}
-              />
-            </div>
-          </div>
-        );
-      } else {
-        // 현재 행에 추가
-        const imageElement = (
-          <div 
-            key={index}
-            className="cursor-pointer transition-transform hover:scale-[1.02]"
-            onClick={(e) => openModal(index, e)}
-            data-image-index={index}
-          >
-            <div className={`${getHeightClass(info.height)} ${info.height === 'auto' ? '' : 'overflow-hidden'}`}>
-              <ImageWithFallback
-                src={info.url}
-                alt={`${artwork.title} - Image ${index + 1}`}
-                className={`w-full ${info.height === 'auto' ? 'h-auto' : 'h-full'} object-cover rounded`}
-              />
-            </div>
-          </div>
-        );
-
-        currentRow.push(imageElement);
-        currentRowLayout.push(info.layout);
-
-        // 행이 꽉 찼는지 확인
-        const totalWidth = currentRowLayout.reduce((sum, layout) => {
-          return sum + (layout === 'half' ? 0.5 : layout === 'third' ? 0.33 : layout === 'quarter' ? 0.25 : 1);
-        }, 0);
-
-        if (totalWidth >= 0.99) {
-          const gridCols = getGridColumns(currentRowLayout);
-          imageElements.push(
-            <div key={`row-${imageElements.length}`} className={`grid ${gridCols} gap-4 mb-4`}>
-              {currentRow}
-            </div>
-          );
-          currentRow = [];
-          currentRowLayout = [];
-        }
-      }
-    });
-
-    // 마지막 행 처리
-    if (currentRow.length > 0) {
+    const flushRow = (isLast = false) => {
+      if (currentRow.length === 0) return;
       const gridCols = getGridColumns(currentRowLayout);
-      imageElements.push(
-        <div key={`row-${imageElements.length}`} className={`grid ${gridCols} gap-4`}>
+      elements.push(
+        <div key={`row-${elements.length}`} className={`grid ${gridCols} gap-4 ${isLast ? '' : 'mb-4'}`}>
           {currentRow}
         </div>
       );
-    }
+      currentRow = [];
+      currentRowLayout = [];
+    };
 
-    return imageElements;
+    // full은 단독 행, 그 외는 현재 행에 채우다 꽉 차면 flush
+    const place = (layout: string, cell: JSX.Element, key: React.Key) => {
+      if (layout === 'full') {
+        flushRow();
+        elements.push(
+          <div key={key} className="mb-4">
+            {cell}
+          </div>
+        );
+      } else {
+        currentRow.push(cell);
+        currentRowLayout.push(layout);
+        const totalWidth = currentRowLayout.reduce((sum, l) => {
+          return sum + (l === 'half' ? 0.5 : l === 'third' ? 0.33 : l === 'quarter' ? 0.25 : 1);
+        }, 0);
+        if (totalWidth >= 0.99) flushRow();
+      }
+    };
+
+    artwork.images.forEach((item, index) => {
+      // 유튜브 영상 항목
+      if (isYouTube(item)) {
+        const layout = item.layout || 'full';
+        const videoId = extractYouTubeId(item.youtube) || item.youtube;
+        place(layout, <YouTubeEmbed key={index} id={videoId} />, index);
+        return;
+      }
+
+      // 이미지 항목
+      const info = getImageInfo(item);
+      const idx = modalIndex++;
+      const cell = (
+        <div
+          key={index}
+          className="cursor-pointer transition-transform hover:scale-[1.02]"
+          onClick={(e) => openModal(idx, e)}
+          data-image-index={idx}
+        >
+          <div className={`${getHeightClass(info.height)} ${info.height === 'auto' ? '' : 'overflow-hidden'}`}>
+            <ImageWithFallback
+              src={info.url}
+              alt={`${artwork.title} - Image ${idx + 1}`}
+              className={`w-full ${info.height === 'auto' ? 'h-auto' : 'h-full'} object-cover rounded`}
+            />
+          </div>
+        </div>
+      );
+      place(info.layout, cell, index);
+    });
+
+    flushRow(true);
+    return elements;
+  };
+
+  // 본문 텍스트 렌더링: @[youtube](...) 단축문법은 영상으로, 나머지는 마크다운으로
+  const renderRichText = (text: string, marginClass: string) => {
+    return splitYouTubeSegments(text).map((seg, i) => {
+      if (seg.type === 'youtube') {
+        return <YouTubeEmbed key={i} {...seg.spec} className={`${marginClass} first:mt-0`} />;
+      }
+      if (!seg.value.trim()) return null;
+      return (
+        <ReactMarkdown
+          key={i}
+          components={{
+            a: ({ children, href }) => (
+              <a href={href} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">
+                {children}
+              </a>
+            ),
+            p: ({ children }) => <p className={`${marginClass} first:mt-0`}>{children}</p>,
+          }}
+        >
+          {seg.value}
+        </ReactMarkdown>
+      );
+    });
   };
 
   // 레이아웃 배열에 따른 그리드 컬럼 결정
@@ -250,24 +264,14 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
           {/* 작품 정보 박스 */}
           <div className="bg-yellow-200 p-4 rounded">
             <div className="text-sm leading-relaxed">
-              <ReactMarkdown components={{
-                a: ({children, href}) => <a href={href} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">{children}</a>,
-                p: ({children}) => <p className="mt-3 first:mt-0">{children}</p>
-              }}>
-                {artwork.description}
-              </ReactMarkdown>
+              {renderRichText(artwork.description, 'mt-3')}
             </div>
           </div>
 
           {/* 상세 설명 */}
           {artwork.detailedDescription && (
             <div className="space-y-4 text-sm leading-relaxed">
-              <ReactMarkdown components={{
-                a: ({children, href}) => <a href={href} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">{children}</a>,
-                p: ({children}) => <p className="mt-4 first:mt-0">{children}</p>
-              }}>
-                {artwork.detailedDescription}
-              </ReactMarkdown>
+              {renderRichText(artwork.detailedDescription, 'mt-4')}
             </div>
           )}
 
@@ -311,7 +315,7 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <ImageWithFallback
-              src={getImageInfo(artwork.images[modalImageIndex]).url}
+              src={getImageInfo(imageItems[modalImageIndex]).url}
               alt={`${artwork.title} - Image ${modalImageIndex + 1}`}
               className="w-full h-full object-contain rounded"
             />
@@ -320,7 +324,7 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
             {/* 컨트롤 버튼들 */}
             <div className="fixed inset-0 pointer-events-none z-50">
               {/* 이전 버튼 */}
-              {artwork.images.length > 1 && (
+              {imageItems.length > 1 && (
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -341,7 +345,7 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
               )}
 
               {/* 다음 버튼 */}
-              {artwork.images.length > 1 && (
+              {imageItems.length > 1 && (
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -378,7 +382,7 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
               </button>
 
               {/* 이미지 카운터 */}
-              {artwork.images.length > 1 && (
+              {imageItems.length > 1 && (
                 <div 
                   className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-20 text-black px-4 py-2 rounded-full text-sm"
                   style={{
@@ -387,7 +391,7 @@ export function WorkPage({ artwork, onBack }: WorkPageProps) {
                     transitionDelay: isAnimating ? '0.1s' : '0s'
                   }}
                 >
-                  {modalImageIndex + 1} / {artwork.images.length}
+                  {modalImageIndex + 1} / {imageItems.length}
                 </div>
               )}
             </div>
