@@ -5,6 +5,9 @@ year: 2019
 projectNumber: "없는 방"
 images:
 
+  - youtube: "https://youtu.be/WinG74CW0_w?si=dV_oS675m2pqZmOA"
+    layout: "full"
+
   - url: "/images/artworks/bareroom1.jpg"
     layout: "full"
     height: "auto"

@@ -5,6 +5,9 @@ year: 2021
 projectNumber: "수류"
 images:
 
+  - youtube: "https://youtu.be/W9oQaVRxWAY?si=tt73wbhBi4ADMqcU"
+    layout: "full"
+
   - url: "/images/artworks/Current0.jpg"
     layout: "full"
     height: "auto"

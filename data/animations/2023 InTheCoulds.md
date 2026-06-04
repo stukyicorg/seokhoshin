@@ -5,6 +5,9 @@ year: 2023
 projectNumber: "뜬구름"
 images:
 
+  - youtube: "https://youtu.be/AdIf-hEpFh8"
+    layout: "full"
+
   - url: "/images/artworks/InTheClouds1.jpg"
     layout: "full"
     height: "auto"

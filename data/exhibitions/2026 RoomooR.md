@@ -5,6 +5,9 @@ year: 2026
 projectNumber: "룸몰"
 images:
 
+  - youtube: "https://youtu.be/SE1zM_VdvSU?si=4c0Z77zCNPyCOlrd"
+    layout: "full"
+
   - url: "/images/artworks/RoomooR_poster1.jpg"
     layout: "third"
     height: "auto"

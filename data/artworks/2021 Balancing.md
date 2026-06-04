@@ -5,6 +5,9 @@ year: 2021
 projectNumber: "균형잡기"
 images:
 
+  - youtube: "https://youtu.be/mNMBe5jlLfY?si=BedHzEXgCDZXftoY"
+    layout: "full"
+
   - url: "/images/artworks/balancing1.jpeg"
     layout: "full"
     height: "auto"
