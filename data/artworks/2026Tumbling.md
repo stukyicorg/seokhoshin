@@ -2,7 +2,7 @@
 id: "Tumbling"
 title: "Tumbling"
 year: 2026
-projectNumber: "덤블링"
+projectNumber: "1"
 images:
 
   - youtube: "https://youtu.be/88XkWVkp8ng?si=iJR0_ZR_LwRVyQ16"
